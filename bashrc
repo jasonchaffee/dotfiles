@@ -1,3 +1,5 @@
+UNAME=`uname -s`
+
 # Source global definitions
 if [[ -f /etc/bashrc ]]; then
 	. /etc/bashrc
@@ -9,8 +11,11 @@ if [[ -f ~/.profile ]]; then
 fi
 
 # Add brew bash completion
-if [[ -f $(brew --prefix)/etc/bash_completion ]]; then
-    . $(brew --prefix)/etc/bash_completion
+if  [[ "Darwin" == "$UNAME" ]]; then
+    if [[ -f $(brew --prefix)/etc/bash_completion ]]; then
+        echo "Adding Homebrew bash completion"
+        . $(brew --prefix)/etc/bash_completion
+    fi
 fi
 
 # Modify bash prompt
