@@ -3,6 +3,7 @@
 # Config install and uninstall script
 if [[ "install" == $1 ]]; then
     echo "Installing dot configuration files"
+    pushd `dirname $0` > /dev/null
     cp -fr sbt ~/.sbt
     cp -fr subversion ~/.subversion
     cp -fr vim ~/.vim
@@ -12,6 +13,7 @@ if [[ "install" == $1 ]]; then
     cp tmux.conf ~/.tmux.conf
     cp vimrc ~/.vimrc
     cp zshrc ~/.zshrc
+    popd > /dev/null
 
     echo "Configuring git"
     git config --global core.editor vim
