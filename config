@@ -1,0 +1,60 @@
+#!/bin/sh
+
+# Config install and uninstall script
+if [[ "install" == $1 ]]; then
+    echo "Installing dot configuration files"
+    cp -fr sbt ~/.sbt
+    cp -fr subversion ~/.subversion
+    cp -fr vim ~/.vim
+    cp bashrc ~/.bashrc
+    cp gitignore ~/.gitignore
+    cp profile ~/.profile
+    cp tmux.conf ~/.tmux.conf
+    cp vimrc ~/.vimrc
+    cp zshrc ~/.zshrc
+
+    echo "Configuring git"
+    git config --global core.editor vim
+    git config --global core.excludesfile ~/.gitignore
+
+    git config --global color.branch auto
+    git config --global color.diff auto
+    git config --global color.interactive auto
+    git config --global color.status auto
+    git config --global color.ui auto
+
+    git config --global push.default simple
+
+    if [[ "$GIT_USER_NAME" ]]; then
+        git config --global user.name "$GIT_USER_NAME"
+    fi
+
+    if [[ "$GIT_USER_EMAIL" ]]; then
+        git config --global user.email "$GIT_USER_EMAIL"
+    fi
+
+    echo "Installing Antigen"
+    rm -fr ~/.antigen
+    git clone https://github.com/zsh-users/antigen.git ~/.antigen
+
+    echo "Installing Vundle"
+    rm -fr ~/.vim/bundle/Vundle.vim
+    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+elif [[ "uninstall" == $1 ]]; then
+    echo "Uninstalling dot configuration files"
+    rm -fr ~/.sbt
+    rm -fr ~/.subversion
+    rm -fr ~/.vim
+    rm ~/.bashrc
+    rm ~/.gitignore
+    rm ~/.profile
+    rm ~/.tmux.conf
+    rm ~/.vimrc
+    rm ~/.zshrc
+    echo "Uninstalling Antigen"
+    rm -fr ~/.antigen
+    echo "Uninstalling Vundle"
+    rm -fr ~/.vim/bundle/Vundle.vim
+else
+    echo "Usage: config install/uninstall"
+fi
