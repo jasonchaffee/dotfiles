@@ -13,7 +13,6 @@ fi
 # Add brew bash completion
 if  [[ "Darwin" == "$UNAME" ]]; then
     if [[ -f $(brew --prefix)/etc/bash_completion ]]; then
-        echo "Adding Homebrew bash completion"
         . $(brew --prefix)/etc/bash_completion
     fi
 fi
