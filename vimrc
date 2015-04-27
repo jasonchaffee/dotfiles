@@ -1,10 +1,10 @@
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
@@ -26,14 +26,19 @@ if $TERM == "xterm-256color"
   set t_Co=256
 endif
 
-colorscheme Tomorrow-Night-Blue
+"if has('gui_running')
+"  set background=light
+"else
+"  set background=dark
+"endif
+
+set background=dark
+colorscheme solarized
 
 set number
-
 set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
 
 au BufNewFile,BufRead *.gradle set filetype=groovy
-

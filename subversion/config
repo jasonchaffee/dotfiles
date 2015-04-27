@@ -92,8 +92,7 @@
 ### which Subversion will ignore in its 'status' output, and
 ### while importing or adding files and directories.
 ### '*' matches leading dots, e.g. '*.rej' matches '.foo.rej'.
-# global-ignores = *.o *.lo *.la *.al .libs *.so *.so.[0-9]* *.a *.pyc *.pyo __pycache__
-#   *.rej *~ #*# .#* .*.swp .DS_Store
+global-ignores = *.o *.lo *.la *.al .libs *.so *.so.[0-9]* *.a *.pyc *.pyo __pycache__ *.rej *~ #*# .#* .*.swp .DS_Store *.class *.dll *.exe *.7z *.dmg *.ear *.gz *.iso *.jar *.rar *.tar *.tar.gz *.tgz *.war *.zip *.log target/ .idea .idea_modules *.iml *.launch .classpath .project .jsdtscope .settings .cache/ .history/ .lib/ dist/ target/ lib_managed/ src_managed/ project/boot/ project/project/ project/target/ project/plugins/project/ out/ .scala_dependencies .worksheet RUNNING_PID
 ### Set log-encoding to the default encoding for log messages
 # log-encoding = latin1
 ### Set use-commit-times to make checkout/update/switch/revert

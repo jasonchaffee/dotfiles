@@ -58,10 +58,6 @@ out/
 .scala_dependencies
 .worksheet
 
-# Bower imports
-public/lib/
-public/app/assets/components/
-
 # Node modules
 node_modules/
 
