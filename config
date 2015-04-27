@@ -1,19 +1,19 @@
 #!/bin/sh
 
+BASE_DIR=`dirname $0`
+
 # Config install and uninstall script
 if [[ "install" == $1 ]]; then
     echo "Installing dot configuration files"
-    pushd `dirname $0` > /dev/null
-    cp -fr sbt ~/.sbt
-    cp -fr subversion ~/.subversion
-    cp -fr vim ~/.vim
-    cp bashrc ~/.bashrc
-    cp gitignore ~/.gitignore
-    cp profile ~/.profile
-    cp tmux.conf ~/.tmux.conf
-    cp vimrc ~/.vimrc
-    cp zshrc ~/.zshrc
-    popd > /dev/null
+    cp -frv ${BASE_DIR}/sbt ~/.sbt
+    cp -frv ${BASE_DIR}/subversion ~/.subversion
+    cp -frv ${BASE_DIR}/vim ~/.vim
+    cp -v ${BASE_DIR}/bashrc ~/.bashrc
+    cp -v ${BASE_DIR}/gitignore ~/.gitignore
+    cp -v ${BASE_DIR}/profile ~/.profile
+    cp -v ${BASE_DIR}/tmux.conf ~/.tmux.conf
+    cp -v ${BASE_DIR}/vimrc ~/.vimrc
+    cp -v ${BASE_DIR}/zshrc ~/.zshrc
 
     echo "Configuring git"
     git config --global core.editor vim
