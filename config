@@ -2,19 +2,7 @@
 
 BASE_DIR=`dirname $0`
 
-# Config install and uninstall script
-if [[ "install" == $1 ]]; then
-    echo "Installing dot configuration files"
-    cp -frv ${BASE_DIR}/sbt ~/.sbt
-    cp -frv ${BASE_DIR}/subversion ~/.subversion
-    cp -frv ${BASE_DIR}/vim ~/.vim
-    cp -v ${BASE_DIR}/bashrc ~/.bashrc
-    cp -v ${BASE_DIR}/gitignore ~/.gitignore
-    cp -v ${BASE_DIR}/profile ~/.profile
-    cp -v ${BASE_DIR}/tmux.conf ~/.tmux.conf
-    cp -v ${BASE_DIR}/vimrc ~/.vimrc
-    cp -v ${BASE_DIR}/zshrc ~/.zshrc
-
+git_config() {
     echo "Configuring git"
     git config --global core.editor vim
     git config --global core.excludesfile ~/.gitignore
@@ -34,6 +22,20 @@ if [[ "install" == $1 ]]; then
     if [[ "$GIT_USER_EMAIL" ]]; then
         git config --global user.email "$GIT_USER_EMAIL"
     fi
+}
+
+# Config install and uninstall script
+if [[ "install" == $1 ]]; then
+    echo "Installing dot configuration files"
+    cp -frv ${BASE_DIR}/sbt ~/.sbt
+    cp -frv ${BASE_DIR}/subversion ~/.subversion
+    cp -frv ${BASE_DIR}/vim ~/.vim
+    cp -v ${BASE_DIR}/bashrc ~/.bashrc
+    cp -v ${BASE_DIR}/gitignore ~/.gitignore
+    cp -v ${BASE_DIR}/profile ~/.profile
+    cp -v ${BASE_DIR}/tmux.conf ~/.tmux.conf
+    cp -v ${BASE_DIR}/vimrc ~/.vimrc
+    cp -v ${BASE_DIR}/zshrc ~/.zshrc
 
     echo "Installing Antigen"
     rm -fr ~/.antigen
@@ -42,6 +44,8 @@ if [[ "install" == $1 ]]; then
     echo "Installing Vundle"
     rm -fr ~/.vim/bundle/Vundle.vim
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+    git_config
 elif [[ "uninstall" == $1 ]]; then
     echo "Uninstalling dot configuration files"
     rm -fr ~/.sbt
@@ -57,6 +61,10 @@ elif [[ "uninstall" == $1 ]]; then
     rm -fr ~/.antigen
     echo "Uninstalling Vundle"
     rm -fr ~/.vim/bundle/Vundle.vim
+elif [[ "git" == $1 ]]; then
+    git_config
 else
     echo "Usage: config install/uninstall"
 fi
+
+
