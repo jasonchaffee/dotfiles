@@ -57,8 +57,10 @@ elif [[ "uninstall" == $1 ]]; then
     rm ~/.tmux.conf
     rm ~/.vimrc
     rm ~/.zshrc
+
     echo "Uninstalling Antigen"
     rm -fr ~/.antigen
+
     echo "Uninstalling Vundle"
     rm -fr ~/.vim/bundle/Vundle.vim
 elif [[ "git" == $1 ]]; then
