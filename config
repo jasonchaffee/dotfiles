@@ -68,5 +68,3 @@ elif [[ "git" == $1 ]]; then
 else
     echo "Usage: config install/uninstall"
 fi
-
-
