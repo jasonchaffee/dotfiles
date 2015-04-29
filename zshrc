@@ -33,7 +33,7 @@ if [[ -f ~/.antigen/antigen.zsh ]]; then
     antigen bundle zsh-users/zsh-syntax-highlighting
 
     # Load the theme.
-    antigen theme sorin
+    antigen theme https://github.com/jasonchaffee/chaffee.zsh-theme.git chaffee
 
     # Tell antigen that you're done.
     antigen apply
