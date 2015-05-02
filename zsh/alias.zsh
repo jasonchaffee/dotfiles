@@ -7,7 +7,7 @@ elif [[ $IS_MAC -eq 1 ]]; then
     alias ls="ls -GFh"
 fi
 
-if [[ command -v colorsvn >/dev/null 2>&1 ]]; then
+if [[ command -v colorsvn >/dev/null ]]; then
     alias svn=colorsvn
 fi
 
