@@ -12,7 +12,7 @@ elif [[ "Darwin" == "$UNAME" ]]; then
     alias ls="ls -Fh"
 fi
 
-# Gradle Opts
+# Gradle Opt
 export GRADLE_OPTS="-Xmx512m -XX:+CMSClassUnloadingEnabled"
 
 # Maven Opts

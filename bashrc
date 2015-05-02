@@ -10,6 +10,14 @@ if [[ -f ~/.profile ]]; then
     . ~/.profile
 fi
 
+ # Source .zsh files, if it exists
+ if [[ -d ~/.zsh ]]; then
+     . ~/.zsh/checks.zsh
+     . ~/.zsh/alias.zsh
+     . ~/.zsh/functions.zsh
+     . ~/.zsh/exports.zsh
+ fi
+
 # Add brew bash completion
 if  [[ "Darwin" == "$UNAME" ]]; then
     if [[ -f $(brew --prefix)/etc/bash_completion ]]; then
