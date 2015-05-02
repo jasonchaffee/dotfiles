@@ -33,7 +33,6 @@ if [[ "install" == $1 ]]; then
     cp -frv ${BASE_DIR}/zsh ~/.zsh
     cp -v ${BASE_DIR}/bashrc ~/.bashrc
     cp -v ${BASE_DIR}/gitignore ~/.gitignore
-    #cp -v ${BASE_DIR}/profile ~/.profile
     cp -v ${BASE_DIR}/tmux.conf ~/.tmux.conf
     cp -v ${BASE_DIR}/vimrc ~/.vimrc
     cp -v ${BASE_DIR}/zshrc ~/.zshrc
@@ -55,7 +54,6 @@ elif [[ "uninstall" == $1 ]]; then
     rm -fr ~/.zsh
     rm ~/.bashrc
     rm ~/.gitignore
-    #rm ~/.profile
     rm ~/.tmux.conf
     rm ~/.vimrc
     rm ~/.zshrc
