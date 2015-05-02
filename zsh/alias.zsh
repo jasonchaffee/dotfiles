@@ -15,7 +15,9 @@ fi
 # directory movement
 # -------------------------------------------------------------------
 alias bk='cd $OLDPWD'
-alias rm='rm -i' # make rm command (potentially) less destructive
+alias rmi='rm -i'
+alias cpi='cp -i'
+alias mvi='mv -i'
 
 # -------------------------------------------------------------------
 # directory information
