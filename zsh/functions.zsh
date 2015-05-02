@@ -62,7 +62,7 @@ if [[ $IS_MAC -eq 1 ]]; then
     pman() { ps=`mktemp -t manpageXXXX`.ps ; man -t $@ > "$ps" ; open "$ps" ; }
 
     # notify function - http://hints.macworld.com/article.php?story=20120831112030251
-    notify() { automator -D title=$1 -D subtitle=$2 -D message=$3 ~/Library/Workflows/DisplayNotification.wflow }
+    #notify() { automator -D title='$1' -D subtitle='$2' -D message='$3' ~/Library/Workflows/'Display Notification.wflow' }
 fi
 
 # -------------------------------------------------------------------
