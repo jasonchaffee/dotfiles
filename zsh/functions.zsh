@@ -116,3 +116,78 @@ givedef() {
     curl "dict://dict.org/d:$1"
   fi
 }
+
+# the following functions are useful to manage multiple versions of java
+# most of these functions are based on the work of others:
+# http://superuser.com/questions/490425
+
+# -------------------------------------------------------------------
+# set jdk
+# usage example: jdk_set 1.6
+# -------------------------------------------------------------------
+function jdk_set() {
+  if [ $# -ne 0 ]; then
+    jdk_reset
+    export JAVA_HOME=`/usr/libexec/java_home -v $@`
+    path_prepend ${JAVA_HOME}/bin
+  fi
+}
+
+# -------------------------------------------------------------------
+# reset jdk
+#
+# -------------------------------------------------------------------
+function jdk_reset() {
+  path_remove '/System/Library/Frameworks/JavaVM.framework/Home/bin'
+  if [ -n "${JAVA_HOME}" ]; then
+   path_remove ${JAVA_HOME}/bin
+   unset JAVA_HOME
+  fi
+}
+
+# -------------------------------------------------------------------
+# check jdk
+#
+# -------------------------------------------------------------------
+function jdk_check() {
+  echo JAVA_HOME=${JAVA_HOME}
+  echo PATH=${PATH}
+  java -version
+}
+
+# -------------------------------------------------------------------
+# list jdks
+#
+# -------------------------------------------------------------------
+function jdk_list() {
+  /usr/libexec/java_home -V 2>&1 | grep -E "\d.\d.\d[,_]" | cut -d , -f 1 | colrm 1 4 | grep -v Home
+}
+
+# some utility functions for manipulating the PATH env var
+# http://superuser.com/questions/490425
+
+# -------------------------------------------------------------------
+# append to path
+#
+# -------------------------------------------------------------------
+function path_append() {
+  path_remove $1
+  export PATH="$PATH:$1"
+}
+
+# -------------------------------------------------------------------
+# prepend to path
+#
+# -------------------------------------------------------------------
+function path_prepend() {
+  path_remove $1
+  export PATH="$1:$PATH"
+}
+
+# -------------------------------------------------------------------
+# remove from path
+#
+# -------------------------------------------------------------------
+function path_remove() {
+  export PATH=`echo -n $PATH | awk -v RS=: -v ORS=: '$0 != "'$1'"' | sed 's/:$//'`
+}

@@ -2,7 +2,7 @@
 # use nocorrect alias to prevent auto correct from "fixing" these
 # -------------------------------------------------------------------
 #alias foobar='nocorrect foobar'
-alias g8='nocorrect g8'
+#alias g8='nocorrect g8'
 
 # -------------------------------------------------------------------
 # Ruby stuff
@@ -16,10 +16,11 @@ alias rake="noglob rake" # necessary to make rake work inside of zsh
 # -------------------------------------------------------------------
 # directory movement
 # -------------------------------------------------------------------
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
+#alias ..='cd ..'
+#alias ...='cd ../..'
+#alias ....='cd ../../..'
 alias 'bk=cd $OLDPWD'
+alias 'rm=rm -i' # make rm command (potentially) less destructive
 
 # -------------------------------------------------------------------
 # directory information
@@ -60,63 +61,52 @@ fi
 # -------------------------------------------------------------------
 # remote machines
 # -------------------------------------------------------------------
-alias 'palantir=ssh mhn@palantir.ome.ksu.edu -p 11122'
-alias 'pvnc=open vnc://palantir.ome.ksu.edu'
-alias 'ksunix=ssh mhn@unix.ksu.edu'
-alias 'veld=ssh mhn@veld.ome.ksu.edu'
-alias 'dev=ssh mhn@ome-dev-as1.ome.campus'
-alias 'wf=ssh markn@markn.webfactional.com'
+#alias 'palantir=ssh mhn@palantir.ome.ksu.edu -p 11122'
+#alias 'pvnc=open vnc://palantir.ome.ksu.edu'
+
 
 # -------------------------------------------------------------------
 # database
 # -------------------------------------------------------------------
-alias 'psqlstart=/usr/local/pgsql/bin/pg_ctl -D /usr/local/pgsql/data -l logfile start'
-alias 'psqlstop=/usr/local/pgsql/bin/pg_ctl stop'
+#alias 'psqlstart=/usr/local/pgsql/bin/pg_ctl -D /usr/local/pgsql/data -l logfile start'
+#alias 'psqlstop=/usr/local/pgsql/bin/pg_ctl stop'
 #alias mysql='mysql -u root'
 #alias mysqladmin='mysqladmin -u root'
 
 # -------------------------------------------------------------------
-# ome devvm start, stop, ssh, and mount
-# -------------------------------------------------------------------
-alias 'startvm=VBoxHeadless --startvm devvm'
-alias 'stopvm=VBoxManage controlvm devvm poweroff'
-alias 'devvm=ssh -p 10022 ome@localhost'
-alias 'devmount=mount_smbfs //ome:ch1cag0@localhost:10139/ome /Users/$USERNAME/Projects/devvm/'
-
-# -------------------------------------------------------------------
 # Mercurial (hg)
 # -------------------------------------------------------------------
-alias 'h=hg status'
-alias 'hc=hg commit'
-alias 'push=hg push'
-alias 'pull=hg pull'
-alias 'clone=hg clone'
+#alias 'h=hg status'
+#alias 'hc=hg commit'
+#alias 'push=hg push'
+#alias 'pull=hg pull'
+#alias 'clone=hg clone'
 
 # -------------------------------------------------------------------
 # Git
 # -------------------------------------------------------------------
-alias ga='git add'
-alias gp='git push'
-alias gl='git log'
-alias gpl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias gs='git status'
-alias gd='git diff'
-alias gm='git commit -m'
-alias gma='git commit -am'
-alias gb='git branch'
-alias gc='git checkout'
-alias gcb='git checkout -b'
-alias gra='git remote add'
-alias grr='git remote rm'
-alias gpu='git pull'
-alias gcl='git clone'
-alias gta='git tag -a -m'
-alias gf='git reflog'
-alias gv='git log --pretty=format:'%s' | cut -d " " -f 1 | sort | uniq -c | sort -nr'
+#alias ga='git add'
+#alias gp='git push'
+#alias gl='git log'
+#alias gpl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+#alias gs='git status'
+#alias gd='git diff'
+#alias gm='git commit -m'
+#alias gma='git commit -am'
+#alias gb='git branch'
+#alias gc='git checkout'
+#alias gcb='git checkout -b'
+#alias gra='git remote add'
+#alias grr='git remote rm'
+#alias gpu='git pull'
+#alias gcl='git clone'
+#alias gta='git tag -a -m'
+#alias gf='git reflog'
+#alias gv='git log --pretty=format:'%s' | cut -d " " -f 1 | sort | uniq -c | sort -nr'
 
 # leverage aliases from ~/.gitconfig
-alias gh='git hist'
-alias gt='git today'
+#alias gh='git hist'
+#alias gt='git today'
 
 # curiosities
 # gsh shows the number of commits for the current repos for all developers
@@ -126,43 +116,14 @@ alias gsh="git shortlog | grep -E '^[ ]+\w+' | wc -l"
 alias gu="git shortlog | grep -E '^[^ ]'"
 
 # -------------------------------------------------------------------
-# Python virtualenv
-# -------------------------------------------------------------------
-alias mkenv='mkvirtualenv'
-alias on="workon"
-alias off="deactivate"
-
-# -------------------------------------------------------------------
 # Oddball stuff
 # -------------------------------------------------------------------
-alias 'sloc=/usr/local/sloccount/bin/sloccount'
-alias 'adventure=emacs -batch -l dunnet' # play adventure in the console
 alias 'ttop=top -ocpu -R -F -s 2 -n30' # fancy top
-alias 'rm=rm -i' # make rm command (potentially) less destructive
 
 # Force tmux to use 256 colors
 alias tmux='TERM=screen-256color-bce tmux'
 
-# alias to cat this file to display
-alias acat='< ~/.zsh/aliases.zsh'
-alias fcat='< ~/.zsh/functions.zsh'
-alias sz='source ~/.zshrc'
-
-
-# -------------------------------------------------------------------
-# some Octopress helpers
-# -------------------------------------------------------------------
-alias 'generate=date ; rake generate ; date ;'
-alias 'gen=date ; rake generate ; date ;'
-alias 'ingen=date ; rake integrate ; generate ; date ;'
-alias 'deploy=rm deploy.log ; rake deploy > deploy.log ; tail -n 3 deploy.log ;'
-alias 'np=newpost.rb'
-
-# copy .htaccess files for zanshin.net and its image sub-directory
-alias 'htaccess=scp /Users/mark/Projects/octopress/zanshin/source/htaccess/.htaccess markn@markn.webfactional.com:~/webapps/zanshin ; scp /Users/mark/Projects/octopress/zanshin/source/images/.htaccess markn@markn.webfactional.com:~/webapps/zanshin/images ;'
-
-# deploy zanshin.net and move its .htaccess files
-alias 'dz=deploy ; htaccess ;'
+alias sz='. ~/.zshrc'
 
 # -------------------------------------------------------------------
 # Source: http://aur.archlinux.org/packages/lolbash/lolbash/lolbash.sh
