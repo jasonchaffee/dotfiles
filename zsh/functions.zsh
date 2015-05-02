@@ -58,12 +58,8 @@ path() {
 # Mac specific functions
 # -------------------------------------------------------------------
 if [[ $IS_MAC -eq 1 ]]; then
-
     # view man pages in Preview
     pman() { ps=`mktemp -t manpageXXXX`.ps ; man -t $@ > "$ps" ; open "$ps" ; }
-
-    # function to show interface IP assignments
-    ips() { foo=`/Users/mark/bin/getip.py; /Users/mark/bin/getip.py en0; /Users/mark/bin/getip.py en1`; echo $foo; }
 
     # notify function - http://hints.macworld.com/article.php?story=20120831112030251
     notify() { automator -D title=$1 -D subtitle=$2 -D message=$3 ~/Library/Workflows/DisplayNotification.wflow }
@@ -128,7 +124,10 @@ givedef() {
 function jdk_set() {
   if [ $# -ne 0 ]; then
     jdk_reset
-    export JAVA_HOME=`/usr/libexec/java_home -v $@`
+    if [[ $IS_MAC -eq 1 ]]; then
+        export JAVA_HOME=`/usr/libexec/java_home -v $@`
+    fi
+    # TODO: add linux logic
     path_prepend ${JAVA_HOME}/bin
   fi
 }
@@ -138,7 +137,9 @@ function jdk_set() {
 #
 # -------------------------------------------------------------------
 function jdk_reset() {
-  path_remove '/System/Library/Frameworks/JavaVM.framework/Home/bin'
+  if [[ $IS_MAC -eq 1 ]]; then
+    path_remove '/System/Library/Frameworks/JavaVM.framework/Home/bin'
+  fi
   if [ -n "${JAVA_HOME}" ]; then
    path_remove ${JAVA_HOME}/bin
    unset JAVA_HOME
@@ -160,7 +161,10 @@ function jdk_check() {
 #
 # -------------------------------------------------------------------
 function jdk_list() {
-  /usr/libexec/java_home -V 2>&1 | grep -E "\d.\d.\d[,_]" | cut -d , -f 1 | colrm 1 4 | grep -v Home
+  if [[ $IS_MAC -eq 1 ]]; then
+    /usr/libexec/java_home -V 2>&1 | grep -E "\d.\d.\d[,_]" | cut -d , -f 1 | colrm 1 4 | grep -v Home
+  fi
+  # TODO: add linux logic
 }
 
 # some utility functions for manipulating the PATH env var
