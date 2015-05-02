@@ -105,7 +105,7 @@ function console () {
 # http://vikros.tumblr.com/post/23750050330/cute-little-function-time
 # -------------------------------------------------------------------
 givedef() {
-  if [[ $# -ge 2 ]] then
+  if [[ $# -ge 2 ]]; then
     echo "givedef: too many arguments" >&2
     return 1
   else
