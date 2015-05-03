@@ -22,7 +22,7 @@ fi
 export GRADLE_OPTS="-Xmx512m -XX:+CMSClassUnloadingEnabled"
 
 # Maven Opts
-export MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=512m -XX:+CMSClassUnloadingEnabled"
+export MAVEN_OPTS="-Xmx512m -XX:+CMSClassUnloadingEnabled"
 
 # SBT Opts
 export SBT_OPTS="-Xmx512m -XX:+CMSClassUnloadingEnabled -Dsbt.override.build.repos=false -Dsbt.jse.engineType=Node"
