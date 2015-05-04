@@ -1,6 +1,16 @@
 # -------------------------------------------------------------------
 # Color stuff
 # -------------------------------------------------------------------
+if [[ $IS_LINUX -eq 1 ]]; then
+    alias ll='ls -Fhl --color=auto'  # Colorize output, add file type indicator, and put sizes in long listing human readable form
+    alias ls='ls -Fh --color=auto'
+    alias lsd='ls -aFhl --color=auto'
+elif [[ $IS_MAC -eq 1 ]]; then
+    alias ll='ls -FGhl'  # Colorize output, add file type indicator, and put sizes in long listing human readable form
+    alias ls='ls -FGh'
+    alias lsd='ls -aFGhl'
+fi
+
 if command -v colorsvn >/dev/null 2>&1; then
     alias svn=colorsvn
 fi
@@ -19,10 +29,7 @@ alias mvi='mv -i'
 alias l='ls -al'
 alias la='ls -AHl'
 alias lh='ls -d .*'               # show hidden files/directories only
-alias ll='ls -FGhl --color=auto'  # Colorize output, add file type indicator, and put sizes in long listing human readable form
-alias ls='ls -FGh --color=auto'   # Colorize output, add file type indicator, and put sizes in human readable format
 alias lsa='ls -ahl'
-alias lsd='ls -aFGhl --color=auto'
 
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 alias dus='du -sckx * | sort -nr' #directories sorted by size
