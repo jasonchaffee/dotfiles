@@ -96,7 +96,7 @@ alias dkml='docker-machine ls'
 # -------------------------------------------------------------------
 alias gf='git reflog'
 alias gv='git log --pretty=format:'%s' | cut -d " " -f 1 | sort | uniq -c | sort -nr'
-alias glpc="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias glpc="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold magenta)<%an>%Creset' --abbrev-commit"
 
 # gsh shows the number of commits for the current repos for all developers
 alias gsh="git shortlog | grep -E '^[ ]+\w+' | wc -l"
