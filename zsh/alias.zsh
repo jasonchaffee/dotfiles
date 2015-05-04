@@ -2,9 +2,9 @@
 # Color stuff
 # -------------------------------------------------------------------
 if [[ $IS_LINUX -eq 1 ]]; then
-    alias ls="ls --color=auto -Fh"
+    alias ls="ls -Fh --color=auto"
 elif [[ $IS_MAC -eq 1 ]]; then
-    alias ls="ls -GFh"
+    alias ls="ls -FGh"
 fi
 
 if command -v colorsvn >/dev/null 2>&1; then
@@ -22,14 +22,13 @@ alias mvi='mv -i'
 # -------------------------------------------------------------------
 # directory information
 # -------------------------------------------------------------------
-l='ls -al'
-l.='ls -dG .* --color=auto'  # show hidden files/directories only with color
-la='ls -AHl'
-lh='ls -d .*'               # show hidden files/directories only
-ll='ls -FGhl --color=auto'  # Colorize output, add file type indicator, and put sizes in long listing human readable form
-ls='ls -FGh --color=auto'   # Colorize output, add file type indicator, and put sizes in human readable format
-lsa='ls -ahl'
-lsd='ls -aFGhl --color=auto'
+alias l='ls -al'
+alias la='ls -AHl'
+alias lh='ls -d .*'               # show hidden files/directories only
+alias ll='ls -FGhl --color=auto'  # Colorize output, add file type indicator, and put sizes in long listing human readable form
+alias ls='ls -FGh --color=auto'   # Colorize output, add file type indicator, and put sizes in human readable format
+alias lsa='ls -ahl'
+alias lsd='ls -aFGhl --color=auto'
 
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 alias dus='du -sckx * | sort -nr' #directories sorted by size
@@ -38,7 +37,7 @@ alias wordy='wc -w * | sort | tail -n10' # sort files in current directory by th
 alias filecount='find . -type f | wc -l' # number of files (not directories)
 
 # -------------------------------------------------------------------
-# Mac only
+# Mac onl
 # -------------------------------------------------------------------
 if [[ $IS_MAC -eq 1 ]]; then
     alias ql='qlmanage -p 2>/dev/null' # OS X Quick Look
