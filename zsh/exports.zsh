@@ -27,6 +27,4 @@ export MAVEN_OPTS="-Xmx512m -XX:+CMSClassUnloadingEnabled"
 # SBT Opts
 export SBT_OPTS="-Xmx512m -XX:+CMSClassUnloadingEnabled -Dsbt.override.build.repos=false -Dsbt.jse.engineType=Node"
 
-if command -v docker-machine env >/dev/null 2>&1; then
-  eval "$(docker-machine env)"
-fi
+docker_env

@@ -195,3 +195,13 @@ function path_prepend() {
 function path_remove() {
   export PATH=`echo -n $PATH | awk -v RS=: -v ORS=: '$0 != "'$1'"' | sed 's/:$//'`
 }
+
+# -------------------------------------------------------------------
+# setup docker env
+#
+# -------------------------------------------------------------------
+function docker_env() {
+  if command -v docker-machine env >/dev/null 2>&1; then
+    eval "$(docker-machine env)"
+  fi
+}
