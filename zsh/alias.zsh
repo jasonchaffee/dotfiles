@@ -16,7 +16,7 @@ if command -v colorsvn >/dev/null 2>&1; then
 fi
 
 # -------------------------------------------------------------------
-# directory movement
+# Directory movement
 # -------------------------------------------------------------------
 alias bk='cd $OLDPWD'
 alias rmi='rm -i'
@@ -24,7 +24,7 @@ alias cpi='cp -i'
 alias mvi='mv -i'
 
 # -------------------------------------------------------------------
-# directory information
+# Directory information
 # -------------------------------------------------------------------
 alias l='ls -al'
 alias la='ls -AHl'
@@ -64,13 +64,7 @@ if [[ $IS_MAC -eq 1 ]]; then
 fi
 
 # -------------------------------------------------------------------
-# remote machines
-# -------------------------------------------------------------------
-#alias 'palantir=ssh mhn@palantir.ome.ksu.edu -p 11122'
-#alias 'pvnc=open vnc://palantir.ome.ksu.edu'
-
-# -------------------------------------------------------------------
-# database
+# Database
 # -------------------------------------------------------------------
 #alias 'psqlstart=/usr/local/pgsql/bin/pg_ctl -D /usr/local/pgsql/data -l logfile start'
 #alias 'psqlstop=/usr/local/pgsql/bin/pg_ctl stop'
@@ -78,41 +72,32 @@ fi
 #alias mysqladmin='mysqladmin -u root'
 
 # -------------------------------------------------------------------
-# Mercurial (hg)
+# Docker
 # -------------------------------------------------------------------
-#alias 'h=hg status'
-#alias 'hc=hg commit'
-#alias 'push=hg push'
-#alias 'pull=hg pull'
-#alias 'clone=hg clone'
+alias dki='docker images'
+alias dkp='docker ps'
+alias dkpa='docker ps -a'
+alias dkrm='docker rm'
+alias dkrmi='docker rmi'
+alias dkrmid='docker rmi $(docker images -q -f dangling=true)'
+
+alias dkcb='docker-compose build'
+alias dkcp='docker-compose ps'
+alias dkcup='docker-compose up -d'
+
+alias dkmcn='docker-machine create -d none'
+alias dkmcv='docker-machine create -d virtualbox'
+alias dkmip='docker-machine ip'
+alias dkml='docker-machine ls'
+
 
 # -------------------------------------------------------------------
-# Git
+# Git - The git plugins gives a lot of aliases
 # -------------------------------------------------------------------
-#alias ga='git add'
-#alias gp='git push'
-#alias gl='git log'
-#alias gpl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-#alias gs='git status'
-#alias gd='git diff'
-#alias gm='git commit -m'
-#alias gma='git commit -am'
-#alias gb='git branch'
-#alias gc='git checkout'
-#alias gcb='git checkout -b'
-#alias gra='git remote add'
-#alias grr='git remote rm'
-#alias gpu='git pull'
-#alias gcl='git clone'
-#alias gta='git tag -a -m'
-#alias gf='git reflog'
-#alias gv='git log --pretty=format:'%s' | cut -d " " -f 1 | sort | uniq -c | sort -nr'
+alias gf='git reflog'
+alias gv='git log --pretty=format:'%s' | cut -d " " -f 1 | sort | uniq -c | sort -nr'
+alias glpc="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
-# leverage aliases from ~/.gitconfig
-#alias gh='git hist'
-#alias gt='git today'
-
-# curiosities
 # gsh shows the number of commits for the current repos for all developers
 alias gsh="git shortlog | grep -E '^[ ]+\w+' | wc -l"
 
@@ -120,7 +105,7 @@ alias gsh="git shortlog | grep -E '^[ ]+\w+' | wc -l"
 alias gu="git shortlog | grep -E '^[^ ]'"
 
 # -------------------------------------------------------------------
-# Oddball stuff
+# Extra stuff
 # -------------------------------------------------------------------
 alias ttop='top -ocpu -R -F -s 2 -n30' # fancy top
 
