@@ -22,11 +22,15 @@ alias mvi='mv -i'
 # -------------------------------------------------------------------
 # directory information
 # -------------------------------------------------------------------
-alias lh='ls -d .*' # show hidden files/directories only
-alias lsd='ls -aFhlG'
-alias l='ls -al'
-alias ls='ls -GFh' # Colorize output, add file type indicator, and put sizes in human readable format
-alias ll='ls -GFhl' # Same as above, but in long listing format
+l='ls -al'
+l.='ls -dG .* --color=auto'  # show hidden files/directories only with color
+la='ls -AHl'
+lh='ls -d .*'               # show hidden files/directories only
+ll='ls -FGhl --color=auto'  # Colorize output, add file type indicator, and put sizes in long listing human readable form
+ls='ls -FGh --color=auto'   # Colorize output, add file type indicator, and put sizes in human readable format
+lsa='ls -ahl'
+lsd='ls -aFGhl --color=auto'
+
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 alias dus='du -sckx * | sort -nr' #directories sorted by size
 
