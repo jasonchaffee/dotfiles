@@ -1,12 +1,6 @@
 # -------------------------------------------------------------------
 # Color stuff
 # -------------------------------------------------------------------
-if [[ $IS_LINUX -eq 1 ]]; then
-    alias ls="ls -Fh --color=auto"
-elif [[ $IS_MAC -eq 1 ]]; then
-    alias ls="ls -FGh"
-fi
-
 if command -v colorsvn >/dev/null 2>&1; then
     alias svn=colorsvn
 fi
