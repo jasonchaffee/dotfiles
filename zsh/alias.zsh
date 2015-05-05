@@ -15,6 +15,10 @@ if command -v colorsvn >/dev/null 2>&1; then
     alias svn=colorsvn
 fi
 
+if command -v colordiff >/dev/null 2>&1; then
+    alias diff=colordiff
+fi
+
 # -------------------------------------------------------------------
 # Directory movement
 # -------------------------------------------------------------------
