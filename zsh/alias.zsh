@@ -87,6 +87,8 @@ alias dkrmid='docker rmi $(docker images -q -f dangling=true)'
 
 alias dkcb='docker-compose build'
 alias dkcp='docker-compose ps'
+alias dkcr='docker-compose rm'
+alias dkcs='docker-compose stop'
 alias dkcup='docker-compose up -d'
 
 alias dkmcn='docker-machine create -d none'
