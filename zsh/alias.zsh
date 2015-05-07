@@ -113,12 +113,14 @@ alias gu="git shortlog | grep -E '^[^ ]'"
 # -------------------------------------------------------------------
 # Extra stuff
 # -------------------------------------------------------------------
-alias ttop='top -ocpu -R -F -s 2 -n30' # fancy top
+alias grep='grep --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn}'
+
+alias sz='. ~/.zshrc'
 
 # Force tmux to use 256 colors
 alias tmux='TERM=screen-256color-bce tmux'
 
-alias sz='. ~/.zshrc'
+alias ttop='top -ocpu -R -F -s 2 -n30' # fancy top
 
 # -------------------------------------------------------------------
 # Source: http://aur.archlinux.org/packages/lolbash/lolbash/lolbash.sh
