@@ -47,7 +47,7 @@ alias filecount='find . -type f | wc -l' # number of files (not directories)
 if [[ $IS_MAC -eq 1 ]]; then
     alias ql='qlmanage -p 2>/dev/null' # OS X Quick Look
     alias oo='open .' # open current directory in OS X Finder
-    alias today='calendar -A 0 -f /usr/share/calendar/calendar.mark | sort'
+    alias today='calendar -A 0 -f /usr/share/calendar/calendar.all | sort'
     alias mailsize='du -hs ~/Library/mail'
     alias smart='diskutil info disk0 | grep SMART' # display SMART status of hard drive
 
