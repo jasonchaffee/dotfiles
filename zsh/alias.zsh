@@ -11,12 +11,16 @@ elif [[ $IS_MAC -eq 1 ]]; then
     alias lsd='ls -aFGhl'
 fi
 
+if command -v colordiff >/dev/null 2>&1; then
+    alias diff=colordiff
+fi
+
 if command -v colorsvn >/dev/null 2>&1; then
     alias svn=colorsvn
 fi
 
-if command -v colordiff >/dev/null 2>&1; then
-    alias diff=colordiff
+if command -v mvn-color >/dev/null 2>&1; then
+    alias mvn=mvn-color
 fi
 
 # -------------------------------------------------------------------
