@@ -5,6 +5,5 @@ shellPrompt := { state =>
     Project.extract(state).getOpt(sbt.Keys.name) getOrElse {
       ""
     }
-  }, { Project.extract(state).currentProject.id }
-  )
+  }, Project.extract(state).currentProject.id)
 }
