@@ -1,2 +1,2 @@
-# devbox-config
-Configuration for devboxes
+# dotfiles
+Dotfiles
