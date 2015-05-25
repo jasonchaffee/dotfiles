@@ -118,7 +118,7 @@ alias gu="git shortlog | grep -E '^[^ ]'"
 # Java
 # -------------------------------------------------------------------
 if [[ $IS_MAC -eq 1 ]]; then
-    export JAVA_HOME=/usr/libexec/java_home
+    export JAVA_HOME=`/usr/libexec/java_home`
 fi
 
 # -------------------------------------------------------------------
