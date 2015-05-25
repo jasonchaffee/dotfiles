@@ -118,36 +118,7 @@ givedef() {
 # http://superuser.com/questions/490425
 
 # -------------------------------------------------------------------
-# set jdk
-# usage example: jdk_set 1.6
-# -------------------------------------------------------------------
-function jdk_set() {
-  if [ $# -ne 0 ]; then
-    jdk_reset
-    if [[ $IS_MAC -eq 1 ]]; then
-        export JAVA_HOME=`/usr/libexec/java_home -v $@`
-    fi
-    # TODO: add linux logic
-    path_prepend ${JAVA_HOME}/bin
-  fi
-}
-
-# -------------------------------------------------------------------
-# reset jdk
-#
-# -------------------------------------------------------------------
-function jdk_reset() {
-  if [[ $IS_MAC -eq 1 ]]; then
-    path_remove '/System/Library/Frameworks/JavaVM.framework/Home/bin'
-  fi
-  if [ -n "${JAVA_HOME}" ]; then
-   path_remove ${JAVA_HOME}/bin
-   unset JAVA_HOME
-  fi
-}
-
-# -------------------------------------------------------------------
-# check jdk
+# Check jdk
 #
 # -------------------------------------------------------------------
 function jdk_check() {
@@ -157,14 +128,57 @@ function jdk_check() {
 }
 
 # -------------------------------------------------------------------
-# list jdks
+# List jdks
 #
 # -------------------------------------------------------------------
 function jdk_list() {
   if [[ $IS_MAC -eq 1 ]]; then
     /usr/libexec/java_home -V 2>&1 | grep -E "\d.\d.\d[,_]" | cut -d , -f 1 | colrm 1 4 | grep -v Home
   fi
-  # TODO: add linux logic
+}
+
+# -------------------------------------------------------------------
+# Set jdk
+# usage example: jdk_set 1.6
+# -------------------------------------------------------------------
+function jdk_set() {
+  if [ $# -ne 0 ]; then
+    jdk_unset
+
+    if [[ $IS_MAC -eq 1 ]]; then
+        export JAVA_HOME=`/usr/libexec/java_home -v $@`
+    fi
+
+    path_prepend ${JAVA_HOME}/bin
+  fi
+}
+
+# -------------------------------------------------------------------
+# Reset jdk
+#
+# -------------------------------------------------------------------
+function jdk_reset() {
+  jdk_unset
+
+  if [[ $IS_MAC -eq 1 ]]; then
+    export JAVA_HOME=/usr/libexec/java_home
+  fi
+}
+
+# -------------------------------------------------------------------
+# Unset jdk
+#
+# -------------------------------------------------------------------
+function jdk_unset() {
+  if [ -n "${JAVA_HOME}" ]; then
+   path_remove ${JAVA_HOME}/bin
+   unset JAVA_HOME
+  fi
+
+  if [[ $IS_MAC -eq 1 ]]; then
+    path_remove '/System/Library/Frameworks/JavaVM.framework/Home/bin'
+    path_remove `/usr/libexec/java_home`/bin
+  fi
 }
 
 # some utility functions for manipulating the PATH env var

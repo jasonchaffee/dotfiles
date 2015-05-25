@@ -115,6 +115,13 @@ alias gsh="git shortlog | grep -E '^[ ]+\w+' | wc -l"
 alias gu="git shortlog | grep -E '^[^ ]'"
 
 # -------------------------------------------------------------------
+# Java
+# -------------------------------------------------------------------
+if [[ $IS_MAC -eq 1 ]]; then
+    export JAVA_HOME=/usr/libexec/java_home
+fi
+
+# -------------------------------------------------------------------
 # Extra stuff
 # -------------------------------------------------------------------
 alias grep='grep --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn}'
