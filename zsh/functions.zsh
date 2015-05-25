@@ -161,7 +161,7 @@ function jdk_reset() {
   jdk_unset
 
   if [[ $IS_MAC -eq 1 ]]; then
-    export JAVA_HOME=/usr/libexec/java_home
+    export JAVA_HOME=`/usr/libexec/java_home`
   fi
 }
 
