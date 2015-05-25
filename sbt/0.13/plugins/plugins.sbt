@@ -2,10 +2,14 @@
 credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
 
 addSbtPlugin("com.eed3si9n" % "sbt-dirty-money" % "0.1.0")
+addSbtPlugin("com.eed3si9n" % "sbt-man" % "0.1.1")
+addSbtPlugin("com.eed3si9n" % "sbt-sh" % "0.1.0")
+addSbtPlugin("com.github.alexarchambault" %% "sbt-notebook" % "0.1.1")
+addSbtPlugin("com.github.jozic" % "sbt-about-plugins" % "0.1.0")
 addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.6.0")
 addSbtPlugin("com.orrsella" % "sbt-stats" % "1.0.5")
+addSbtPlugin("com.sksamuel.sbt-versions" % "sbt-versions" % "0.2.0")
+addSbtPlugin("com.sensatus" % "sbt-build-info-conf" % "1.0.0")
 addSbtPlugin("com.typesafe.sbt" % "sbt-git" % "0.8.4")
 addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.1.8")
 addSbtPlugin("net.virtual-void" % "sbt-dependency-graph" % "0.7.5")
-
-// addSbtPlugin("com.github.jozic" % "sbt-about-plugins" % "0.1.0")
