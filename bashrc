@@ -1,4 +1,4 @@
-UNAME=`uname -s`
+UNAME=$(uname -s)
 
 # Source global definitions
 if [[ -f /etc/bashrc ]]; then

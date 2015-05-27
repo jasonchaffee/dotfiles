@@ -59,7 +59,7 @@ path() {
 # -------------------------------------------------------------------
 if [[ $IS_MAC -eq 1 ]]; then
     # view man pages in Preview
-    pman() { ps=`mktemp -t manpageXXXX`.ps ; man -t $@ > "$ps" ; open "$ps" ; }
+    pman() { ps=$(mktemp -t manpageXXXX).ps ; man -t $@ > "$ps" ; open "$ps" ; }
 
     # notify function - http://hints.macworld.com/article.php?story=20120831112030251
     #notify() { automator -D title='$1' -D subtitle='$2' -D message='$3' ~/Library/Workflows/'Display Notification.wflow' }
@@ -146,7 +146,7 @@ function jdk_set() {
     jdk_unset
 
     if [[ $IS_MAC -eq 1 ]]; then
-        export JAVA_HOME=`/usr/libexec/java_home -v $@`
+        export JAVA_HOME=$(/usr/libexec/java_home -v $@)
     fi
 
     path_prepend ${JAVA_HOME}/bin
@@ -161,7 +161,7 @@ function jdk_reset() {
   jdk_unset
 
   if [[ $IS_MAC -eq 1 ]]; then
-    export JAVA_HOME=`/usr/libexec/java_home`
+    export JAVA_HOME=$(/usr/libexec/java_home)
   fi
 }
 
@@ -177,7 +177,7 @@ function jdk_unset() {
 
   if [[ $IS_MAC -eq 1 ]]; then
     path_remove '/System/Library/Frameworks/JavaVM.framework/Home/bin'
-    path_remove `/usr/libexec/java_home`/bin
+    path_remove $(/usr/libexec/java_home)/bin
   fi
 }
 
@@ -207,7 +207,7 @@ function path_prepend() {
 #
 # -------------------------------------------------------------------
 function path_remove() {
-  export PATH=`echo -n $PATH | awk -v RS=: -v ORS=: '$0 != "'$1'"' | sed 's/:$//'`
+  export PATH=$(echo -n $PATH | awk -v RS=: -v ORS=: '$0 != "'$1'"' | sed 's/:$//')
 }
 
 # -------------------------------------------------------------------
