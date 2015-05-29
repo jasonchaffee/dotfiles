@@ -115,11 +115,9 @@ alias gsh="git shortlog | grep -E '^[ ]+\w+' | wc -l"
 alias gu="git shortlog | grep -E '^[^ ]'"
 
 # -------------------------------------------------------------------
-# Java
+# Scala
 # -------------------------------------------------------------------
-if [[ $IS_MAC -eq 1 ]]; then
-    export JAVA_HOME=$(/usr/libexec/java_home)
-fi
+alias scala='scala -Dscala.color'
 
 # -------------------------------------------------------------------
 # Extra stuff
