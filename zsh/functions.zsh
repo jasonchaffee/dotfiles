@@ -219,3 +219,11 @@ function docker_env() {
     eval "$(docker-machine env)"
   fi
 }
+
+# -------------------------------------------------------------------
+# list brew dependencies
+#
+# -------------------------------------------------------------------
+function brewdeps() {
+    brew list | while read cask; do echo -n $fg[blue] $cask $fg[white]; brew deps $cask | awk '{printf(" %s ", $0)}'; echo ""; done
+}
