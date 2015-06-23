@@ -216,7 +216,7 @@ function path_remove() {
 # -------------------------------------------------------------------
 function docker_env() {
   if command -v docker-machine env >/dev/null 2>&1; then
-    eval "$(docker-machine env)"
+    eval "$(docker-machine env $@)"
   fi
 }
 

@@ -51,4 +51,4 @@ export SBT_OPTS="-Xmx512m -XX:+CMSClassUnloadingEnabled -Dsbt.override.build.rep
 # -------------------------------------------------------------------
 # Docker
 # -------------------------------------------------------------------
-docker_env
+docker_env dev
