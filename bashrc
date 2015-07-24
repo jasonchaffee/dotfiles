@@ -25,7 +25,7 @@ if  [[ "Darwin" == "$UNAME" ]]; then
     fi
 fi
 
-alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
+eval "$(thefuck-alias)"
 
 # Modify bash prompt
 ##export PS1="[\d \t \[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]] \$ "
