@@ -44,6 +44,11 @@ export GRADLE_OPTS="-Xmx512m -XX:+CMSClassUnloadingEnabled"
 export MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=512m -XX:+CMSClassUnloadingEnabled"
 
 # -------------------------------------------------------------------
+# NVM
+# -------------------------------------------------------------------
+export NVM_DIR=~/.nvm
+
+# -------------------------------------------------------------------
 # RBENV
 # -------------------------------------------------------------------
 export RBENV_ROOT=/usr/local/var/rbenv
@@ -52,3 +57,4 @@ export RBENV_ROOT=/usr/local/var/rbenv
 # SBT
 # -------------------------------------------------------------------
 export SBT_OPTS="-Xmx512m -XX:+CMSClassUnloadingEnabled -Dsbt.override.build.repos=false -Dsbt.jse.engineType=Node"
+
