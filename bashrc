@@ -25,7 +25,10 @@ if  [[ "Darwin" == "$UNAME" ]]; then
     fi
 fi
 
-eval "$(thefuck-alias)"
+#eval "$(thefuck-alias)"
 
 # Modify bash prompt
-##export PS1="[\d \t \[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]] \$ "
+##export PS1="[\d \t \[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]] \$
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+

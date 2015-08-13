@@ -131,8 +131,6 @@ alias tmux='TERM=screen-256color-bce tmux'
 
 alias ttop='top -ocpu -R -F -s 2 -n30' # fancy top
 
-eval "$(thefuck-alias)"
-
 # -------------------------------------------------------------------
 # Source: http://aur.archlinux.org/packages/lolbash/lolbash/lolbash.sh
 # -------------------------------------------------------------------
