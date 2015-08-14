@@ -17,7 +17,7 @@ fi
      . ~/.zsh/exports.zsh
  fi
 
- if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if command -v rbenv >/dev/null 2>&1; then eval "$(rbenv init -)"; fi
 
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
