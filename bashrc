@@ -30,8 +30,10 @@ fi
 # Modify bash prompt
 ##export PS1="[\d \t \[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]] \$
 
+# Initialize rbenv
 if command -v rbenv >/dev/null 2>&1; then eval "$(rbenv init -)"; fi
 
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# Source nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 export PATH="$PATH:~/bin"
