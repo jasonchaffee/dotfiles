@@ -276,3 +276,12 @@ function tab () {
         end tell
 EOF
 }
+
+# -------------------------------------------------------------------
+# Set title of terminal tab
+#
+# -------------------------------------------------------------------
+precmd() {
+  # sets the tab title to current dir
+  echo -ne "\e]1;${PWD##*/}\a"
+}
