@@ -262,7 +262,7 @@ function tab () {
     fi
 
     if [ -n "$args" ]; then
-        cmd="; $args"
+        cmd="$args"
     fi
 
     osascript &>/dev/null <<EOF
@@ -270,7 +270,10 @@ function tab () {
             tell current terminal
                 launch session "Default Session"
                 tell the last session
-                    write text "cd \"$cdto\"$cmd"
+                    write text "cd \"$cdto\""
+                end tell
+                tell the last session
+                    write text "$cmd"
                 end tell
             end tell
         end tell
