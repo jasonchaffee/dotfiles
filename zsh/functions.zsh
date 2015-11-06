@@ -281,6 +281,51 @@ EOF
 }
 
 # -------------------------------------------------------------------
+# Set the color of the terminal tab
+#
+# -------------------------------------------------------------------
+function tab_color() {
+    if [[ $# == 1 ]]
+    then
+        # convert hex to decimal
+        hex=$1
+        if [[ ${hex:0:1} == "#" ]]
+        then
+            # strip leading hash sign
+            hex=${hex:1:6}
+        fi
+        if [[ ${#hex} == 3 ]]
+        then
+            # handle 3-letter hex codes
+            hex="${hex:0:1}${hex:0:1}${hex:1:1}${hex:1:1}${hex:2:1}${hex:2:1}"
+        fi
+        r=$(printf "%d" 0x${hex:0:2})
+        g=$(printf "%d" 0x${hex:2:2})
+        b=$(printf "%d" 0x${hex:4:2})
+    else
+        r=$1
+        g=$2
+        b=$3
+    fi
+    echo -ne "\033]6;1;bg;red;brightness;$r\a"
+    echo -ne "\033]6;1;bg;green;brightness;$g\a"
+    echo -ne "\033]6;1;bg;blue;brightness;$b\a"
+}
+
+# -------------------------------------------------------------------
+# Several helper functions for setting tab color
+#
+# -------------------------------------------------------------------
+function tab_red() { tab_color 203 111 111; }
+function tab_green() { tab_color 6cc276; }
+function tab_yellow() { tab_color "#e8e9ac"; }
+function tab_blue() { tab_color 6f8ccc; }
+function tab_purple() { tab_color a789d4; }
+function tab_orange() { tab_color fbbc79; }
+function tab_white() { tab_color fff; }
+function tab_gray() { tab_color c3c3c3c; }
+
+# -------------------------------------------------------------------
 # Set title of terminal tab
 #
 # -------------------------------------------------------------------
