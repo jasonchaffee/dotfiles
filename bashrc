@@ -34,6 +34,6 @@ fi
 if command -v rbenv >/dev/null 2>&1; then eval "$(rbenv init -)"; fi
 
 # Source nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[ -s "${NVM_DIR}/nvm.sh" ] && . "${NVM_DIR}/nvm.sh"
 
-export PATH="$PATH:~/bin"
+export PATH="${PATH}:${HOME}/bin"
