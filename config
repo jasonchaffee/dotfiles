@@ -15,6 +15,7 @@ git_config() {
 
     git config --global push.default simple
     git config --global pull.ff only
+    git config --global alias.up '!git remote update -p; git merge --ff-only @{u}'
 
     if [[ "$GIT_USER_NAME" ]]; then
         git config --global user.name "$GIT_USER_NAME"
