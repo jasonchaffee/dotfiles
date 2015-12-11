@@ -21,9 +21,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
 
 " Statusline and tabline utility
-'powerline/powerline'
-
-" Statusline and tabline utility
 Plugin 'bling/vim-airline'
 
 " Statusline and tabline utility
