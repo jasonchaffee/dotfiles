@@ -231,13 +231,6 @@ function brewdeps() {
 # -------------------------------------------------------------------
 # Open new Terminal tabs from the command line
 #
-# -------------------------------------------------------------------
-#!/bin/bash
-#
-# Open new Terminal tabs from the command line
-#
-# Author: Justin Hileman (http://justinhileman.com)
-#
 # Installation:
 #     Add the following function to your `.bashrc` or `.bash_profile`,
 #     or save it somewhere (e.g. `~/.tab.bash`) and source it in `.bashrc`
@@ -247,11 +240,12 @@ function brewdeps() {
 #     tab [PATH]            Open PATH in a new tab
 #     tab [CMD]             Open a new tab and execute CMD
 #     tab [PATH] [CMD] ...  You can prob'ly guess
-
-# Only for teh Mac users
-[ `uname -s` != "Darwin" ] && return
-
+# -------------------------------------------------------------------
 function tab () {
+    if [[ $IS_MAC -ne 1 ]]; then
+        return
+    fi
+
     local cmd=""
     local cdto="$PWD"
     local args="$@"

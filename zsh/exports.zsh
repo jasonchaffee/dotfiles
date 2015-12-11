@@ -11,7 +11,7 @@ export EDITOR='vim'
 # -------------------------------------------------------------------
 # Grep
 # -------------------------------------------------------------------
-#export GREP_OPTIONS='--color=auto'
+# export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='3;33'
 
 # -------------------------------------------------------------------
@@ -46,7 +46,7 @@ export GRADLE_OPTS="-Xmx512m -XX:+CMSClassUnloadingEnabled"
 # -------------------------------------------------------------------
 # Maven
 # -------------------------------------------------------------------
-export MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=512m -XX:+CMSClassUnloadingEnabled"
+export MAVEN_OPTS="-Xmx512m -XX:+CMSClassUnloadingEnabled"
 
 # -------------------------------------------------------------------
 # NVM
@@ -56,10 +56,9 @@ export NVM_DIR=${HOME}/.nvm
 # -------------------------------------------------------------------
 # RBENV
 # -------------------------------------------------------------------
-#export RBENV_ROOT=/usr/local/var/rbenv
+# export RBENV_ROOT=/usr/local/var/rbenv
 
 # -------------------------------------------------------------------
 # SBT
 # -------------------------------------------------------------------
 export SBT_OPTS="-Xmx512m -XX:+CMSClassUnloadingEnabled -Dsbt.override.build.repos=false -Dsbt.jse.engineType=Node"
-

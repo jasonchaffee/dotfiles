@@ -74,10 +74,10 @@ fi
 # -------------------------------------------------------------------
 # Database
 # -------------------------------------------------------------------
-#alias 'psqlstart=/usr/local/pgsql/bin/pg_ctl -D /usr/local/pgsql/data -l logfile start'
-#alias 'psqlstop=/usr/local/pgsql/bin/pg_ctl stop'
-#alias mysql='mysql -u root'
-#alias mysqladmin='mysqladmin -u root'
+# alias 'psqlstart=/usr/local/pgsql/bin/pg_ctl -D /usr/local/pgsql/data -l logfile start'
+# alias 'psqlstop=/usr/local/pgsql/bin/pg_ctl stop'
+# alias mysql='mysql -u root'
+# alias mysqladmin='mysqladmin -u root'
 
 # -------------------------------------------------------------------
 # Docker
