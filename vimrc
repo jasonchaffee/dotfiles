@@ -20,8 +20,11 @@ Plugin 'tpope/vim-fugitive'
 " Syntax checking
 Plugin 'scrooloose/syntastic'
 
-" Statusline utility
-'Lokaltog/vim-powerline'
+" Statusline and tabline utility
+'powerline/powerline'
+
+" Statusline and tabline utility
+Plugin 'bling/vim-airline'
 
 " Statusline and tabline utility
 Plugin 'itchyny/lightline.vim'
