@@ -20,6 +20,9 @@ Plugin 'L9'
 " Fast file navigation
 Plugin 'wincent/command-t'
 
+" Dash plugin
+Plugin 'rizzatti/dash.vim'
+
 syntax on
 
 if $TERM == "xterm-256color"
