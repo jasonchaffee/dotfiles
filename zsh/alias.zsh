@@ -15,8 +15,16 @@ if command -v colordiff >/dev/null 2>&1; then
     alias diff=colordiff
 fi
 
+if command -v colormake >/dev/null 2>&1; then
+    alias make=colormake
+fi
+
 if command -v colorsvn >/dev/null 2>&1; then
     alias svn=colorsvn
+fi
+
+if command -v colortail >/dev/null 2>&1; then
+    alias tail=colortail
 fi
 
 if command -v mvn-color >/dev/null 2>&1; then
