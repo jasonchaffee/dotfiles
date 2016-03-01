@@ -97,5 +97,6 @@ build/
 # Gemfile.lock
 #.ruby-version
 #.ruby-gemset
-#.rakeTasks
+.rakeTasks
+.generators
 .env
