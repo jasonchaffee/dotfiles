@@ -62,3 +62,26 @@ export NVM_DIR=${HOME}/.nvm
 # SBT
 # -------------------------------------------------------------------
 export SBT_OPTS="-Xmx512m -XX:+CMSClassUnloadingEnabled -Dsbt.override.build.repos=false -Dsbt.jse.engineType=Node"
+
+# -------------------------------------------------------------------
+# Initialize pyenv
+# -------------------------------------------------------------------
+if command -v pyenv >/dev/null 2>&1; then eval "$(pyenv init -)"; fi
+
+# -------------------------------------------------------------------
+# Initialize rbenv
+# -------------------------------------------------------------------
+if command -v rbenv >/dev/null 2>&1; then eval "$(rbenv init -)"; fi
+
+# -------------------------------------------------------------------
+# Initialize chruby
+# -------------------------------------------------------------------
+if command -v chruby >/dev/null 2>&1; then
+    . '/usr/local/share/chruby/chruby.sh'
+    . '/usr/local/share/chruby/auto.sh'
+fi
+
+# -------------------------------------------------------------------
+# Initialize nvm
+# -------------------------------------------------------------------
+[ -s "${NVM_DIR}/nvm.sh" ] && . "${NVM_DIR}/nvm.sh"

@@ -17,13 +17,4 @@ fi
      . ~/.zsh/exports.zsh
  fi
 
-# Initialize pyenv
-if command -v pyenv >/dev/null 2>&1; then eval "$(pyenv init -)"; fi
-
-# Initialize rbenv
-if command -v rbenv >/dev/null 2>&1; then eval "$(rbenv init -)"; fi
-
-# Source nvm
-[ -s "${NVM_DIR}/nvm.sh" ] && . "${NVM_DIR}/nvm.sh"
-
 path_append ${HOME}/bin
