@@ -76,7 +76,7 @@ if command -v rbenv >/dev/null 2>&1; then eval "$(rbenv init -)"; fi
 # -------------------------------------------------------------------
 # Initialize chruby
 # -------------------------------------------------------------------
-if command -v chruby >/dev/null 2>&1; then
+if [[ -d /usr/local/share/chruby ]]; then
     . '/usr/local/share/chruby/chruby.sh'
     . '/usr/local/share/chruby/auto.sh'
 fi
