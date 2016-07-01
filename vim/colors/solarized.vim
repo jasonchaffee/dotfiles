@@ -50,13 +50,13 @@
 "
 "     a. **clone with git:**
 "
-"       $ cd ~/.vim/bundle
+"       $ cd ${HOME}/.vim/bundle
 "       $ git clone git://github.com/altercation/vim-colors-solarized.git
 "
 "     b. **or move manually into the pathogen bundle directory:**
 "         In the parent directory of vim-colors-solarized:
 "
-"         $ mv vim-colors-solarized ~/.vim/bundle/
+"         $ mv vim-colors-solarized ${HOME}/.vim/bundle/
 "
 " MODIFY VIMRC:
 "
@@ -185,7 +185,7 @@ let s:defaults_list=[
             \''
             \]
 let s:lazycat_list=[
-            \'" lazy method of appending this onto your .vimrc ":w! >> ~/.vimrc"',
+            \'" lazy method of appending this onto your .vimrc ":w! >> ${HOME}/.vimrc"',
             \'" ------------------------------------------------------------------',
             \]
 

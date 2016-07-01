@@ -1,6 +1,6 @@
 # Configure antigen, if installed
-if [[ -f ~/.antigen/antigen.zsh ]]; then
-    . ~/.antigen/antigen.zsh
+if [[ -f ${HOME}/.antigen/antigen.zsh ]]; then
+    . ${HOME}/.antigen/antigen.zsh
 
     # Load the oh-my-zsh's library.
     antigen use oh-my-zsh

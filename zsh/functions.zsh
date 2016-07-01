@@ -62,7 +62,7 @@ if [[ $IS_MAC -eq 1 ]]; then
     pman() { ps=$(mktemp -t manpageXXXX).ps ; man -t $@ > "$ps" ; open "$ps" ; }
 
     # notify function - http://hints.macworld.com/article.php?story=20120831112030251
-    #notify() { automator -D title='$1' -D subtitle='$2' -D message='$3' ~/Library/Workflows/'Display Notification.wflow' }
+    #notify() { automator -D title='$1' -D subtitle='$2' -D message='$3' ${HOME}/Library/Workflows/'Display Notification.wflow' }
 fi
 
 # -------------------------------------------------------------------
@@ -85,8 +85,8 @@ function myip() {
 # -------------------------------------------------------------------
 # (s)ave or (i)nsert a directory.
 # -------------------------------------------------------------------
-s() { pwd > ~/.save_dir ; }
-i() { cd "$(cat ~/.save_dir)" ; }
+s() { pwd > ${HOME}/.save_dir ; }
+i() { cd "$(cat ${HOME}/.save_dir)" ; }
 
 # -------------------------------------------------------------------
 # console function
@@ -233,7 +233,7 @@ function brewdeps() {
 #
 # Installation:
 #     Add the following function to your `.bashrc` or `.bash_profile`,
-#     or save it somewhere (e.g. `~/.tab.bash`) and source it in `.bashrc`
+#     or save it somewhere (e.g. `${HOME}/.tab.bash`) and source it in `.bashrc`
 #
 # Usage:
 #     tab                   Opens the current directory in a new tab

@@ -59,6 +59,11 @@ export NVM_DIR=${HOME}/.nvm
 # export RBENV_ROOT=/usr/local/var/rbenv
 
 # -------------------------------------------------------------------
+# SDKMAN
+# -------------------------------------------------------------------
+export SDKMAN_DIR="${HOME}/.sdkman"
+
+# -------------------------------------------------------------------
 # SBT
 # -------------------------------------------------------------------
 export SBT_OPTS="-Xmx512m -XX:+CMSClassUnloadingEnabled -Dsbt.override.build.repos=false -Dsbt.jse.engineType=Node"

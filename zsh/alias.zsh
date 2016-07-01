@@ -60,7 +60,7 @@ if [[ $IS_MAC -eq 1 ]]; then
     alias ql='qlmanage -p 2>/dev/null' # OS X Quick Look
     alias oo='open .' # open current directory in OS X Finder
     alias today='calendar -A 0 -f /usr/share/calendar/calendar.all | sort'
-    alias mailsize='du -hs ~/Library/mail'
+    alias mailsize='du -hs ${HOME}/Library/mail'
     alias smart='diskutil info disk0 | grep SMART' # display SMART status of hard drive
 
     # Hall of the Mountain King
@@ -138,7 +138,7 @@ alias scala='scala -Dscala.color'
 # -------------------------------------------------------------------
 alias grep='grep --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn}'
 
-alias sz='. ~/.zshrc'
+alias sz='. ${HOME}/.zshrc'
 
 # Force tmux to use 256 colors
 alias tmux='TERM=screen-256color-bce tmux'
