@@ -6,9 +6,9 @@ if [[ -f /etc/bashrc ]]; then
 fi
 
 # Source .profile, if it exsists
-#if [[ -f ${HOME}/.profile ]]; then
-#    . ${HOME}/.profile
-#fi
+if [[ -f ${HOME}/.profile ]]; then
+    . ${HOME}/.profile
+fi
 
  # Source .zsh files, if it exists
  if [[ -d ${HOME}/.zsh ]]; then
