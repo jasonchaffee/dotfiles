@@ -310,6 +310,7 @@ function tab_color() {
 # Several helper functions for setting tab color
 #
 # -------------------------------------------------------------------
+function tab_aqua()   { tab_color 112 192 177; }
 function tab_red() { tab_color 203 111 111; }
 function tab_green() { tab_color 6cc276; }
 function tab_yellow() { tab_color "#e8e9ac"; }
