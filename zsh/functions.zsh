@@ -256,18 +256,17 @@ function tab () {
     fi
 
     if [ -n "$args" ]; then
-        cmd="$args"
+        cmd="; $args"
     fi
 
     osascript &>/dev/null <<EOF
         tell application "iTerm"
-            tell current terminal
-                launch session "Default Session"
-                tell the last session
-                    write text "cd \"$cdto\""
-                end tell
-                tell the last session
-                    write text "$cmd"
+            tell current window
+                set newTab to (create tab with default profile)
+                tell newTab
+                    tell current session
+                        write text "cd \"$cdto\"$cmd"
+                    end tell
                 end tell
             end tell
         end tell
