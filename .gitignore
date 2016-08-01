@@ -25,8 +25,9 @@
 # OS Files
 .DS_Store
 
-# Maven Build Directory
+# Build Output
 target
+test-output
 
 # Idea IDE
 .idea
