@@ -6,7 +6,7 @@ if [[ -f ${HOME}/.antigen/antigen.zsh ]]; then
     antigen use oh-my-zsh
 
     # Load prezto
-    antigen bundle sorin-ionescu/prezto
+    #antigen bundle sorin-ionescu/prezto
 
     # Bundles from the default repo (robbyrussell's oh-my-zsh).
     antigen bundle bower
