@@ -126,7 +126,9 @@ alias gu="git shortlog | grep -E '^[^ ]'"
 # -------------------------------------------------------------------
 # Java
 # -------------------------------------------------------------------
-alias jshell="eval $(/usr/libexec/java_home)/bin/jshell"
+if [[ $IS_MAC -eq 1 ]]; then
+    alias jshell="eval $(/usr/libexec/java_home)/bin/jshell"
+fi
 
 # -------------------------------------------------------------------
 # Scala
