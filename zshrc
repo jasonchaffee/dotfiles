@@ -1,14 +1,18 @@
- echo "here.........................................."
-
 # Source global definitions
 if [[ -f /etc/zshrc ]]; then
 	. /etc/zshrc
 fi
+ echo "here.........................................."
 
  # Source .profile, if it exists
  if [[ -f ${HOME}/.profile ]]; then
+  echo "here2.........................................."
+
      . ${HOME}/.profile
+      echo "here3.........................................."
+
  fi
+ echo "here4.........................................."
 
  # Source .zsh files, if it exists
  if [[ -d ${HOME}/.zsh ]]; then
