@@ -8,7 +8,7 @@ fi
  if [[ -f ${HOME}/.profile ]]; then
   echo "here2.........................................."
 
-     . ${HOME}/.profile
+     source ${HOME}/.profile
       echo "here3.........................................."
 
  fi
