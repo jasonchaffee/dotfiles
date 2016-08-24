@@ -1,3 +1,5 @@
+ echo "here.........................................."
+
 # Source global definitions
 if [[ -f /etc/zshrc ]]; then
 	. /etc/zshrc
@@ -9,7 +11,6 @@ fi
  fi
 
  # Source .zsh files, if it exists
- echo "here.........................................."
  if [[ -d ${HOME}/.zsh ]]; then
      . ${HOME}/.zsh/antigen.zsh
      . ${HOME}/.zsh/checks.zsh
