@@ -11,7 +11,7 @@ fi
 
  # Source .zsh files, if it exists
  if [[ -d ${HOME}/.zsh ]]; then
-     . ${HOME}/.zsh/antigen.zsh
+     #. ${HOME}/.zsh/antigen.zsh
      . ${HOME}/.zsh/checks.zsh
      . ${HOME}/.zsh/alias.zsh
      . ${HOME}/.zsh/functions.zsh
