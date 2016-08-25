@@ -126,7 +126,9 @@ alias gu="git shortlog | grep -E '^[^ ]'"
 # -------------------------------------------------------------------
 # Scala
 # -------------------------------------------------------------------
-alias scala='scala -Dscala.color'
+if command -v scala >/dev/null 2>&1; then
+    alias scala='scala -Dscala.color'
+fi
 
 # -------------------------------------------------------------------
 # Extra stuff
