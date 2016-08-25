@@ -21,10 +21,16 @@ fi
 path_append ${HOME}/bin
 
 # The next line updates PATH for the Google Cloud SDK.
-[[ -s "${HOME}/google-cloud-sdk/path.zsh.inc" ]] && . "${HOME}/google-cloud-sdk/path.zsh.inc"
+if [[ -s "${HOME}/google-cloud-sdk/path.zsh.inc" ]]; then
+    . "${HOME}/google-cloud-sdk/path.zsh.inc"
+fi
 
 # The next line enables shell command completion for gcloud.
-[[ -s "${HOME}/google-cloud-sdk/completion.zsh.inc" ]] && . "${HOME}/google-cloud-sdk/completion.zsh.inc"
+if [[ -s "${HOME}/google-cloud-sdk/completion.zsh.inc" ]]; then
+    . "${HOME}/google-cloud-sdk/completion.zsh.inc"
+fi
 
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-#[[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]] && . "${HOME}/.sdkman/bin/sdkman-init.sh"
+if [[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]]; then
+    . "${HOME}/.sdkman/bin/sdkman-init.sh"
+fi
