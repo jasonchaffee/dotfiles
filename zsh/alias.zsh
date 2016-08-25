@@ -109,7 +109,6 @@ alias dkmcv='docker-machine create -d virtualbox'
 alias dkmip='docker-machine ip'
 alias dkml='docker-machine ls'
 
-
 # -------------------------------------------------------------------
 # Git - The git plugins gives a lot of aliases
 # -------------------------------------------------------------------
