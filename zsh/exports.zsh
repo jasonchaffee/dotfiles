@@ -14,6 +14,19 @@ export LC_ALL='C'
 export EDITOR='vim'
 
 # -------------------------------------------------------------------
+# Google Cloud SDK
+# -------------------------------------------------------------------
+# The next line updates PATH for the Google Cloud SDK.
+if [[ -s "${HOME}/google-cloud-sdk/path.zsh.inc" ]]; then
+    . "${HOME}/google-cloud-sdk/path.zsh.inc"
+fi
+
+# The next line enables shell command completion for gcloud.
+if [[ -s "${HOME}/google-cloud-sdk/completion.zsh.inc" ]]; then
+    . "${HOME}/google-cloud-sdk/completion.zsh.inc"
+fi
+
+# -------------------------------------------------------------------
 # Grep
 # -------------------------------------------------------------------
 # export GREP_OPTIONS='--color=auto'
@@ -70,6 +83,11 @@ fi
 # -------------------------------------------------------------------
 if [[ -d "${HOME}/.sdkman" ]]; then
     export SDKMAN_DIR="${HOME}/.sdkman"
+fi
+
+# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+if [[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]]; then
+    . "${HOME}/.sdkman/bin/sdkman-init.sh"
 fi
 
 # -------------------------------------------------------------------
