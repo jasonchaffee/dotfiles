@@ -13,7 +13,7 @@ fi
  if [[ -d ${HOME}/.dot ]]; then
      . ${HOME}/.dot/antigen
      . ${HOME}/.dot/checks
-     . ${HOME}/.dot/alias
+     . ${HOME}/.dot/aliases
      . ${HOME}/.dot/functions
      . ${HOME}/.dot/exports
  fi
