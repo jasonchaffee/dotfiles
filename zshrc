@@ -9,13 +9,13 @@ fi
      . ${HOME}/.profile
  fi
 
- # Source .zsh files, if it exists
- if [[ -d ${HOME}/.zsh ]]; then
-     . ${HOME}/.zsh/antigen.zsh
-     . ${HOME}/.zsh/checks.zsh
-     . ${HOME}/.zsh/alias.zsh
-     . ${HOME}/.zsh/functions.zsh
-     . ${HOME}/.zsh/exports.zsh
+ # Source .dot files, if it exists
+ if [[ -d ${HOME}/.dot ]]; then
+     . ${HOME}/.dot/antigen
+     . ${HOME}/.dot/checks
+     . ${HOME}/.dot/alias
+     . ${HOME}/.dot/functions
+     . ${HOME}/.dot/exports
  fi
 
 path_append ${HOME}/bin
