@@ -13,7 +13,7 @@ fi
  # Source .dot files, if it exists
  if [[ -d ${HOME}/.dot ]]; then
      . ${HOME}/.dot/checks
-     . ${HOME}/.dot/aliased
+     . ${HOME}/.dot/aliases
      . ${HOME}/.dot/functions
      . ${HOME}/.dot/exports
  fi
