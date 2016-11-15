@@ -10,8 +10,8 @@ if [[ -f ${HOME}/.antigen/antigen.zsh ]]; then
 
     # Bundles from the default repo (robbyrussell's oh-my-zsh).
     antigen bundle bower
-    antigen bundle brew
-    antigen bundle brew-cask
+    # antigen bundle brew
+    # antigen bundle brew-cask
     antigen bundle bundler
     antigen bundle docker
     antigen bundle docker-compose
@@ -19,6 +19,7 @@ if [[ -f ${HOME}/.antigen/antigen.zsh ]]; then
     antigen bundle gem
     antigen bundle git
     antigen bundle go
+    antigen bundle gulp
     antigen bundle history
     antigen bundle mvn
     antigen bundle node
