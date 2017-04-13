@@ -119,3 +119,8 @@ fi
 if [[ -s "${NVM_DIR}/nvm.sh" ]]; then
     . "${NVM_DIR}/nvm.sh"
 fi
+
+# -------------------------------------------------------------------
+# Initialize jenv
+# -------------------------------------------------------------------
+if command -v jenv >/dev/null 2>&1; then eval "$(jenv init -)"; fi
