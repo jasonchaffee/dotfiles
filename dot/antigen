@@ -28,7 +28,6 @@ if [[ -f ${HOME}/.antigen/antigen.zsh ]]; then
 
     # Brew
     antigen bundle brew
-    antigen bundle cask
 
     # Docker
     antigen bundle docker
