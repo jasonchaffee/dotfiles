@@ -53,7 +53,19 @@ export DISABLE_AUTO_TITLE="true"
 # Java
 # -------------------------------------------------------------------
 if [[ $IS_MAC -eq 1 ]]; then
-    export JAVA_HOME=$(/usr/libexec/java_home)
+    export JAVA_HOME=eval "$(/usr/libexec/java_home)"
+fi
+
+# -------------------------------------------------------------------
+# Initialize jenv
+# -------------------------------------------------------------------
+if command -v jenv >/dev/null 2>&1; then eval "$(jenv init -)"; fi
+
+# -------------------------------------------------------------------
+# Initialize nvm
+# -------------------------------------------------------------------
+if [[ -s "${NVM_DIR}/nvm.sh" ]]; then
+    . "${NVM_DIR}/nvm.sh"
 fi
 
 # -------------------------------------------------------------------
@@ -65,30 +77,6 @@ export GRADLE_OPTS="-Xmx512m -XX:+CMSClassUnloadingEnabled"
 # Maven
 # -------------------------------------------------------------------
 export MAVEN_OPTS="-Xmx512m -XX:+CMSClassUnloadingEnabled"
-
-# -------------------------------------------------------------------
-# NVM
-# -------------------------------------------------------------------
-if [[ -d "${HOME}/.nvm" ]]; then
-    export NVM_DIR=${HOME}/.nvm
-fi
-
-# -------------------------------------------------------------------
-# RBENV
-# -------------------------------------------------------------------
-# export RBENV_ROOT=/usr/local/var/rbenv
-
-# -------------------------------------------------------------------
-# SDKMAN
-# -------------------------------------------------------------------
-if [[ -d "${HOME}/.sdkman" ]]; then
-    export SDKMAN_DIR="${HOME}/.sdkman"
-fi
-
-# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-if [[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]]; then
-    . "${HOME}/.sdkman/bin/sdkman-init.sh"
-fi
 
 # -------------------------------------------------------------------
 # SBT
@@ -114,13 +102,13 @@ if [[ -d /usr/local/share/chruby ]]; then
 fi
 
 # -------------------------------------------------------------------
-# Initialize nvm
+# SDKMAN
 # -------------------------------------------------------------------
-if [[ -s "${NVM_DIR}/nvm.sh" ]]; then
-    . "${NVM_DIR}/nvm.sh"
+if [[ -d "${HOME}/.sdkman" ]]; then
+    export SDKMAN_DIR="${HOME}/.sdkman"
 fi
 
-# -------------------------------------------------------------------
-# Initialize jenv
-# -------------------------------------------------------------------
-if command -v jenv >/dev/null 2>&1; then eval "$(jenv init -)"; fi
+# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+if [[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]]; then
+    . "${HOME}/.sdkman/bin/sdkman-init.sh"
+fi
