@@ -122,8 +122,10 @@ givedef() {
 #
 # -------------------------------------------------------------------
 function jdk_check() {
-  echo JAVA_HOME=${JAVA_HOME}
   echo PATH=${PATH}
+  echo ""
+  echo JAVA_HOME=${JAVA_HOME}
+  echo ""
   java -version
 }
 
