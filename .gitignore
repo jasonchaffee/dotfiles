@@ -41,6 +41,9 @@ test-output
 .jsdtscope
 .settings
 
+# jenv
+.java-version
+
 # sbt
 .cache/
 .history/
