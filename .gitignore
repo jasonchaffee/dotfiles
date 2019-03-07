@@ -41,9 +41,6 @@ test-output
 .jsdtscope
 .settings
 
-# jenv
-.java-version
-
 # sbt
 .cache/
 .history/
@@ -68,7 +65,10 @@ node_modules/
 # Activator
 RUNNING_PID
 
-## Ruby
+# Java
+.java-version
+
+# Ruby
 *.gem
 *.rbc
 /.config
@@ -80,18 +80,18 @@ RUNNING_PID
 /test/version_tmp/
 /tmp/
 
-## Specific to RubyMotion:
+# Specific to RubyMotion:
 .dat*
 .repl_history
 build/
 
-## Documentation cache and generated files:
+# Documentation cache and generated files:
 /.yardoc/
 /_yardoc/
 /doc/
 /rdoc/
 
-## Environment normalisation:
+# Environment normalisation:
 /.bundle/
 /vendor/bundle
 /lib/bundler/man/
