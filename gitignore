@@ -1,11 +1,11 @@
-## Compiled Source
+# Compiled Source
 *.class
 *.dll
 *.exe
 *.o
 *.so
 
-## Artifacts
+# Artifacts
 *.7z
 *.dmg
 *.ear
@@ -22,25 +22,26 @@
 # Logs
 *.log
 
-## OS Files
+# OS Files
 .DS_Store
 
-## Maven Build Directory
+# Build Output
 target
+test-output
 
-## Idea IDE
+# Idea IDE
 .idea
 .idea_modules
 *.iml
 *.launch
 
-## Eclipse IDE
+# Eclipse IDE
 .classpath
 .project
 .jsdtscope
 .settings
 
-## sbt
+# sbt
 .cache/
 .history/
 .lib/
@@ -58,13 +59,16 @@ out/
 .scala_dependencies
 .worksheet
 
-## Node modules
+# Node modules
 node_modules/
 
 ## Activator
 RUNNING_PID
 
-## Ruby
+# Java
+.java-version
+
+# Ruby
 *.gem
 *.rbc
 /.config
@@ -76,18 +80,18 @@ RUNNING_PID
 /test/version_tmp/
 /tmp/
 
-## Specific to RubyMotion:
+# Specific to RubyMotion:
 .dat*
 .repl_history
 build/
 
-## Documentation cache and generated files:
+# Documentation cache and generated files:
 /.yardoc/
 /_yardoc/
 /doc/
 /rdoc/
 
-## Environment normalisation:
+# Environment normalisation:
 /.bundle/
 /vendor/bundle
 /lib/bundler/man/
@@ -95,8 +99,8 @@ build/
 # for a library or gem, you might want to ignore these files since the code is
 # intended to run in multiple environments; otherwise, check them in:
 # Gemfile.lock
-#.ruby-version
-#.ruby-gemset
-.rakeTasks
-.generators
-.env
+# .ruby-version
+# .ruby-gemset
+# .rakeTasks
+#.generators
+#.env
