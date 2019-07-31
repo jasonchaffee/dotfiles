@@ -120,7 +120,7 @@ endif
 "endif
 
 set background=dark
-colorscheme solarized
+#colorscheme solarized
 
 set number
 set smartindent
