@@ -18,7 +18,14 @@ if [[ -f ${HOME}/.antigen/antigen.zsh ]]; then
     antigen bundle go
     #antigen bundle gulp
     antigen bundle heroku
-    antigen bundle history
+    antigen bundle
+
+    # Docker
+    antigen bundle docker
+    antigen bundle docker-compose
+
+    # Java / Scala
+    antigen bundle gradle history
     antigen bundle httpie
     antigen bundle kubectl
     #antigen bundle postgres
@@ -28,13 +35,6 @@ if [[ -f ${HOME}/.antigen/antigen.zsh ]]; then
 
     # Brew
     antigen bundle brew
-
-    # Docker
-    antigen bundle docker
-    antigen bundle docker-compose
-
-    # Java / Scala
-    antigen bundle gradle
     antigen bundle mvn
     antigen bundle sbt
     antigen bundle scala
