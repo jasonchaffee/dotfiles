@@ -19,7 +19,6 @@ if [[ $ANTIGEN_INSTALLED -eq 1 ]]; then
     #antigen bundle sorin-ionescu/prezto
 
     # Bundles from the default repo (robbyrussell's oh-my-zsh).
-
     antigen bundle aws
     antigen bundle colored-man-pages
     antigen bundle command-not-found
@@ -28,7 +27,7 @@ if [[ $ANTIGEN_INSTALLED -eq 1 ]]; then
     antigen bundle golang
     #antigen bundle gulp
     antigen bundle heroku
-    antigen bundle
+    antigen bundle history
 
     # Docker
     antigen bundle docker
