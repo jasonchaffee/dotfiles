@@ -79,6 +79,4 @@ if [[ $ANTIGEN_INSTALLED -eq 1 ]]; then
 
     # Tell antigen that you're done.
     antigen apply
-    antigen clenaup
-    antigen list
  fi
