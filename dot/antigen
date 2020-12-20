@@ -3,7 +3,7 @@ if [[ -f ${HOME}/.antigen/antigen.zsh ]]; then
     . ${HOME}/.antigen/antigen.zsh
 fi
 
-if if [[ -d antigen ]]; then
+if [[ -d antigen ]]; then
     # Load the oh-my-zsh's library.
     antigen use oh-my-zsh
 
