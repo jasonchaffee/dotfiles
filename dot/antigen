@@ -15,7 +15,7 @@ if [[ -f ${HOME}/.antigen/antigen.zsh ]]; then
     antigen bundle command-not-found
     antigen bundle dotenv
     antigen bundle git
-    antigen bundle golang
+    antigen bundle go
     #antigen bundle gulp
     antigen bundle heroku
     antigen bundle
