@@ -1,12 +1,16 @@
 # Configure antigen, if installed
 
+ANTIGEN_INSTALLED=0
+
 if [[ -f /usr/local/share/antigen/antigen.zsh ]]; then
     . /usr/local/share/antigen/antigen.zsh
+    ANTIGEN_INSTALLED=1
 elif [[ -f ${HOME}/.antigen/antigen.zsh ]]; then
     . ${HOME}/.antigen/antigedn.zsh
+    ANTIGEN_INSTALLED=1
 fi
 
-if [[ -d antigen ]]; then
+if [[ $ANTIGEN_INSTALLED -eq 1 ]]; then
     # Load the oh-my-zsh's library.
     antigen use oh-my-zsh
 
