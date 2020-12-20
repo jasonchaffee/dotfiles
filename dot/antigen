@@ -2,6 +2,7 @@
 
 ANTIGEN_INSTALLED=0
 
+# Check if installed with Homebrew or cloned from github
 if [[ -f /usr/local/share/antigen/antigen.zsh ]]; then
     . /usr/local/share/antigen/antigen.zsh
     ANTIGEN_INSTALLED=1
