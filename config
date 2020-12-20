@@ -97,9 +97,10 @@ if [[ "install" == $1 ]]; then
     cp -v ${BASE_DIR}/vimrc ${HOME}/.vimrc
     cp -v ${BASE_DIR}/zshrc ${HOME}/.zshrc
 
-    echo "Installing Antigen"
-    rm -fr ${HOME}/.antigen
-    git clone https://github.com/zsh-users/antigen.git ${HOME}/.antigen
+    ## Now using Homebrew to install Antigen
+    #echo "Installing Antigen"
+    #rm -fr ${HOME}/.antigen
+    #git clone https://github.com/zsh-users/antigen.git ${HOME}/.antigen
 
     echo "Installing Vundle"
     rm -fr ${HOME}/.vim/bundle/Vundle.vim
