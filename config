@@ -97,7 +97,7 @@ if [[ "install" == $1 ]]; then
     cp -v ${BASE_DIR}/vimrc ${HOME}/.vimrc
     cp -v ${BASE_DIR}/zshrc ${HOME}/.zshrc
 
-    #echo "Installing Antigen"
+    echo "Installing Antigen"
     rm -fr ${HOME}/.antigen
     git clone https://github.com/zsh-users/antigen.git ${HOME}/.antigen
 
