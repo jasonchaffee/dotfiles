@@ -2,7 +2,7 @@
 
 if [[ -f /usr/local/share/antigen/antigen.zsh ]]; then
     . /usr/local/share/antigen/antigen.zsh
-else if [[ -f ${HOME}/.antigen/antigen.zsh ]]; then
+elif [[ -f ${HOME}/.antigen/antigen.zsh ]]; then
     . ${HOME}/.antigen/antigedn.zsh
 fi
 
