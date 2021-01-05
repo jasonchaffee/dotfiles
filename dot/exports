@@ -77,17 +77,17 @@ fi
 # -------------------------------------------------------------------
 # Gradle
 # -------------------------------------------------------------------
-export GRADLE_OPTS="-Xmx512m -XX:+CMSClassUnloadingEnabled"
+export GRADLE_OPTS="-Xmx512m"
 
 # -------------------------------------------------------------------
 # Maven
 # -------------------------------------------------------------------
-export MAVEN_OPTS="-Xmx512m -XX:+CMSClassUnloadingEnabled"
+export MAVEN_OPTS="-Xmx512m"
 
 # -------------------------------------------------------------------
 # SBT
 # -------------------------------------------------------------------
-export SBT_OPTS="-Xmx512m -XX:+CMSClassUnloadingEnabled -Dsbt.override.build.repos=false -Dsbt.jse.engineType=Node"
+export SBT_OPTS="-Xmx512m -Dsbt.override.build.repos=false -Dsbt.jse.engineType=Node"
 
 # -------------------------------------------------------------------
 # Initialize pyenv
