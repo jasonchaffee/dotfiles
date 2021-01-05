@@ -98,7 +98,7 @@ if [[ "install" == $1 ]]; then
     cp -v ${BASE_DIR}/zshrc ${HOME}/.zshrc
 
     # Check if Antigen is already installed on Mac with Homebrew
-    if [[! -f /usr/local/share/antigen/antigen.zsh ]]; then
+    if [[ ! -f /usr/local/share/antigen/antigen.zsh ]]; then
       echo "Installing Antigen"
       rm -fr ${HOME}/.antigen
       git clone https://github.com/zsh-users/antigen.git ${HOME}/.antigen
@@ -122,7 +122,7 @@ elif [[ "uninstall" == $1 ]]; then
     rm ${HOME}/.zshrc
 
     # Check if Antigen is already installed on Mac with Homebrew
-    if [[! -f /usr/local/share/antigen/antigen.zsh ]]; then
+    if [[ ! -f /usr/local/share/antigen/antigen.zsh ]]; then
         echo "Uninstalling Antigen"
         rm -fr ${HOME}/.antigen
     fi
