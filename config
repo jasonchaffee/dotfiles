@@ -115,11 +115,11 @@ elif [[ "uninstall" == $1 ]]; then
     rm -fr ${HOME}/.subversion
     rm -fr ${HOME}/.vim
     rm -fr ${HOME}/.dot
-    rm ${HOME}/.bashrc
-    rm ${HOME}/.gitignore
-    rm ${HOME}/.tmux.conf
-    rm ${HOME}/.vimrc
-    rm ${HOME}/.zshrc
+    rm -f ${HOME}/.bashrc
+    rm -f ${HOME}/.gitignore
+    rm -f ${HOME}/.tmux.conf
+    rm -f ${HOME}/.vimrc
+    rm -f ${HOME}/.zshrc
 
     # Check if Antigen is already installed on Mac with Homebrew
     if [[ ! -f /usr/local/share/antigen/antigen.zsh ]]; then
