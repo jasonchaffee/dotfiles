@@ -75,7 +75,7 @@ git_config() {
     git config --global alias.up 'pull --all --ff-only'
     git config --global alias.upr '!git remote update -p; git merge --ff-only @{u}'
 
-#    git config --global alias.st st 'status -s -uno'
+    git config --global alias.st 'status -s -uno'
 
 #    git config --global alias.tidy '"!f(){ git remote prune upstream && git gc --aggressive; }; f"'
 #
