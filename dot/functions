@@ -135,7 +135,14 @@ function jdk_check() {
 # -------------------------------------------------------------------
 function jdk_list() {
   if [[ $IS_MAC -eq 1 ]]; then
-    /usr/libexec/java_home -V 2>&1 | grep -E "\d.\d.\d[,_]" | cut -d , -f 1 | colrm 1 4 | grep -v Home
+    DELIM=-
+    OS_VERSION='sw_vers -productVersion'
+
+    if [[ $OS_VERSION < 11 ]]; then
+        DELIM=,
+    fi
+
+    /usr/libexec/java_home -V 2>&1 | grep -E "\d.\d.\d" | cut -d ${DELIM} -f 1 | colrm 1 4 | grep -v JavaVirtualMachines
   fi
 }
 
