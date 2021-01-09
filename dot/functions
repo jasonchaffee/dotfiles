@@ -138,7 +138,7 @@ function jdk_list() {
     DELIM=-
     OS_VERSION='sw_vers -productVersion'
 
-    if [[ $OS_VERSION < 11 ]]; then
+    if [[ $OS_VERSION -lt 11 ]]; then
         DELIM=,
     fi
 
