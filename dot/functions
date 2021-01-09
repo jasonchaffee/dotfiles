@@ -136,7 +136,7 @@ function jdk_check() {
 function jdk_list() {
   if [[ $IS_MAC -eq 1 ]]; then
     DELIM=-
-    OS_VERSION='sw_vers -productVersion'
+    OS_VERSION=$(sw_vers -productVersion | cut -d . -f 1)
 
     if [[ $OS_VERSION -lt 11 ]]; then
         DELIM=,
