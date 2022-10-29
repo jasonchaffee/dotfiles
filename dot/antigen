@@ -36,7 +36,7 @@ if [[ $ANTIGEN_INSTALLED -eq 1 ]]; then
     # Java / Scala
     antigen bundle gradle history
     antigen bundle httpie
-    antigen bundle kubectl
+    #antigen bundle kubectl
     #antigen bundle postgres
     antigen bundle safe-paste
     antigen bundle svn
