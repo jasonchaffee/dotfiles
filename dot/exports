@@ -24,11 +24,15 @@ export EDITOR='vim'
 # The next line updates PATH for the Google Cloud SDK.
 if [[ -s "/usr/local/Caskroom/google-cloud-sdk/path.zsh.inc" ]]; then
     . "/usr/local/Caskroom/google-cloud-sdk/path.zsh.inc"
+elif [[ -s "/opt/homebrew/Caskroom/google-cloud-sdk/path.zsh.inc" ]]; then
+    . "/opt/homebrew/Caskroom/google-cloud-sdk/path.zsh.inc"
 fi
 
 # The next line enables shell command completion for gcloud.
 if [[ -s "/usr/local/Caskroom/google-cloud-sdk/completion.zsh.inc" ]]; then
     . "/usr/local/Caskroom/google-cloud-sdk/completion.zsh.inc"
+elif [[ -s "/opt/homebrew/Caskroom/google-cloud-sdk/completion.zsh.inc" ]]; then
+    . "/opt/homebrew/Caskroom/google-cloud-sdk/completion.zsh.inc"
 fi
 
 # -------------------------------------------------------------------
@@ -111,6 +115,9 @@ if command -v rbenv >/dev/null 2>&1; then eval "$(rbenv init -)"; fi
 if [[ -d /usr/local/share/chruby ]]; then
     . '/usr/local/share/chruby/chruby.sh'
     . '/usr/local/share/chruby/auto.sh'
+elif [[ -d /opt/homebrew/share/chruby ]]; then
+    . '/opt/homebrew/share/chruby/chruby.sh'
+    . '/opt/homebrew/share/chruby/auto.sh'
 fi
 
 # -------------------------------------------------------------------
