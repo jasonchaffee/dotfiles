@@ -107,8 +107,8 @@ export SPRING_OUTPUT_ANSI_ENABLED=ALWAYS
 # -------------------------------------------------------------------
 # LOGBACK
 # -------------------------------------------------------------------
-if [[ -s "${HOME}/DEV/logback.xml" ]]; then
-    export LOGGING_CONFIG="${HOME}/DEV/logback.xml"
+if [[ -s "${HOME}/Dev/logback.xml" ]]; then
+    export LOGGING_CONFIG="${HOME}/Dev/logback.xml"
 fi
 
 # -------------------------------------------------------------------
