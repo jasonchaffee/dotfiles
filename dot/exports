@@ -96,8 +96,20 @@ export MAVEN_OPTS="-Xms512M -Xmx2G -XX:+CMSClassUnloadingEnabled"
 # -------------------------------------------------------------------
 # SBT
 # -------------------------------------------------------------------
-#export SBT_OPTS="-Xms512M -Xmx2G -XX:+CMSClassUnloadingEnabled -Dsbt.override.build.repos=false -Dsbt.jse.engineType=Node"
-export SBT_OPTS="-Xms512M -Xmx2G -XX:+CMSClassUnloadingEnabled"
+#export SBT_OPTS="-Xms512M -Xmx2G -Dsbt.override.build.repos=false -Dsbt.jse.engineType=Node"
+export SBT_OPTS="-Xms512M -Xmx2G"
+
+# -------------------------------------------------------------------
+# SPRING BOOT
+# -------------------------------------------------------------------
+export SPRING_OUTPUT_ANSI_ENABLED=ALWAYS
+
+# -------------------------------------------------------------------
+# LOGBACK
+# -------------------------------------------------------------------
+if [[ -s "${HOME}/DEV/logback.xml" ]]; then
+    export LOGGING_CONFIG="${HOME}/DEV/logback.xml"
+fi
 
 # -------------------------------------------------------------------
 # Initialize pyenv
