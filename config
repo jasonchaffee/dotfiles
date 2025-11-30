@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BASE_DIR=$(dirname $0)
+BASE_DIR="$(pwd)"
 
 git_config() {
     echo "Configuring git..."
@@ -91,22 +91,23 @@ if [[ "install" == $1 ]]; then
     cp -v ${HOME}/.zshrc ${HOME}/.zshrc.dotfiles.install.bak
 
     echo "Installing dot configuration files"
-    cp -frv ${BASE_DIR}/sbt ${HOME}/.sbt
-    cp -frv ${BASE_DIR}/subversion ${HOME}/.subversion
-    cp -frv ${BASE_DIR}/vim ${HOME}/.vim
+    cp -frv ${BASE_DIR}/sbt.inc ${HOME}/.sbt
+    cp -frv ${BASE_DIR}/subversion.inc ${HOME}/.subversion
+    cp -frv ${BASE_DIR}/vim.inc ${HOME}/.vim
     cp -frv ${BASE_DIR}/dot ${HOME}/.dot
-    cp -v ${BASE_DIR}/gitignore ${HOME}/.gitignore
-    cp -v ${BASE_DIR}/tmux.conf ${HOME}/.tmux.conf
-    cp -v ${BASE_DIR}/vimrc ${HOME}/.vimrc
-    cp -v ${BASE_DIR}/bashrc ${HOME}/.bashrc
-    cp -v ${BASE_DIR}/zshrc ${HOME}/.zshrc
+    cp -v ${BASE_DIR}/gitignore.inc ${HOME}/.gitignore
+    cp -v ${BASE_DIR}/tmux.conf.inc ${HOME}/.tmux.conf
+    cp -v ${BASE_DIR}/vimrc.inc ${HOME}/.vimrc
+    cp -v ${BASE_DIR}/dot/zsh_plugins.txt.inc ${HOME}/.zsh_plugins.txt
+    cp -v ${BASE_DIR}/bashrc.inc ${HOME}/.bashrc
+    cp -v ${BASE_DIR}/zshrc.inc ${HOME}/.zshrc
 
     # Check if Antigen is already installed on Mac with Homebrew
-    if [[ ! -f /usr/local/share/antigen/antigen.zsh ]]; then
-      echo "Installing Antigen"
-      rm -fr ${HOME}/.antigen
-      git clone https://github.com/zsh-users/antigen.git ${HOME}/.antigen
-    fi
+    # if [[ ! -f /usr/local/share/antigen/antigen.zsh ]]; then
+    #   echo "Installing Antigen"
+    #   rm -fr ${HOME}/.antigen
+    #   git clone https://github.com/zsh-users/antigen.git ${HOME}/.antigen
+    # fi
     
     echo "Installing Vundle"
     rm -fr ${HOME}/.vim/bundle/Vundle.vim
@@ -127,18 +128,19 @@ elif [[ "uninstall" == $1 ]]; then
     rm -f ${HOME}/.gitignore
     rm -f ${HOME}/.tmux.conf
     rm -f ${HOME}/.vimrc
+    rm -f ${HOME}/.zsh_plugins.txt
     rm -f ${HOME}/.zshrc
 
-    # Check if Antigen is already installed on Mac with Homebrew
-    if [[ ! -f /usr/local/share/antigen/antigen.zsh ]]; then
-        echo "Uninstalling Antigen"
-        rm -fr ${HOME}/.antigen
-    fi
+    # # Check if Antigen is already installed on Mac with Homebrew
+    # if [[ ! -f /usr/local/share/antigen/antigen.zsh ]]; then
+    #     echo "Uninstalling Antigen"
+    #     rm -fr ${HOME}/.antigen
+    # fi
 
     echo "Uninstalling Vundle"
     rm -fr ${HOME}/.vim/bundle/Vundle.vim
 elif [[ "git" == $1 ]]; then
     git_config
 else
-    echo "Usage: config install/uninstall"
+    echo "Usage: config install/uninstall/git"
 fi

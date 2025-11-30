@@ -1,12 +1,23 @@
 # -------------------------------------------------------------------
-# /usr/local/bin
+# Homebrew Bin
 # -------------------------------------------------------------------
-path_prepend /usr/local/bin
+path_prepend $(brew --prefix)/bin
 
 # -------------------------------------------------------------------
-# /opt/homebrew/bin
+# Antidote ZSH Plugin Manager
 # -------------------------------------------------------------------
-path_prepend /opt/homebrew/bin
+# Source Antidote from Brew Install
+if [[ -f "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh" ]]; then
+    . "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh"
+
+    # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
+    antidote load
+fi
+
+# -------------------------------------------------------------------
+# ZSH Theme
+# -------------------------------------------------------------------
+#export ZSH_THEME='chaffee'
 
 # -------------------------------------------------------------------
 # Use Default Language for output
