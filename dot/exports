@@ -19,6 +19,11 @@ export LC_ALL='C'
 export EDITOR='vim'
 
 # -------------------------------------------------------------------
+# Shell Name
+# -------------------------------------------------------------------
+export SHELL_NAME=$(basename "$SHELL")
+
+# -------------------------------------------------------------------
 # Google Antigravity
 # -------------------------------------------------------------------
 if [[ -d "${HOME}/.antigravity" ]]; then
@@ -28,7 +33,8 @@ fi
 # -------------------------------------------------------------------
 # Google Cloud SDK
 # -------------------------------------------------------------------
- [[ -s "/usr/local/Caskroom/google-cloud-sdk/path.zsh.inc" ]]; then
+ # The next line updates PATH for the Google Cloud SDK.
+if [[ -s "/usr/local/Caskroom/google-cloud-sdk/path.zsh.inc" ]]; then
     . "/usr/local/Caskroom/google-cloud-sdk/path.zsh.inc"
 elif [[ -s "/opt/homebrew/Caskroom/google-cloud-sdk/path.zsh.inc" ]]; then
     . "/opt/homebrew/Caskroom/google-cloud-sdk/path.zsh.inc"
@@ -143,7 +149,7 @@ fi
 # -------------------------------------------------------------------
 # Initialize mise
 # -------------------------------------------------------------------
-if command -v mise >/dev/null 2>&1; then eval "$(mise activate -)"; fi
+if command -v mise >/dev/null 2>&1; then eval "$(mise activate ${SHELL_NAME})"; fi
 
 # -------------------------------------------------------------------
 # SDKMAN
