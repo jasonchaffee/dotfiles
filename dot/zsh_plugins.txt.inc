@@ -21,9 +21,8 @@ getantidote/use-omz        # handle OMZ dependencies
 ohmyzsh/ohmyzsh path:lib   # load OMZ's library
 ohmyzsh/ohmyzsh path:plugins/colored-man-pages  # load OMZ plugins
 ohmyzsh/ohmyzsh path:plugins/magic-enter
-
 # custom theme
- jasonchaffee/chaffee.zsh-theme
+jasonchaffee/chaffee.zsh-theme
 
 # or lighter-weight ones like zsh-utils
 belak/zsh-utils path:editor
@@ -42,3 +41,4 @@ mattmc3/zfunctions
 zsh-users/zsh-autosuggestions
 zdharma-continuum/fast-syntax-highlighting kind:defer
 zsh-users/zsh-history-substring-search
+ 
