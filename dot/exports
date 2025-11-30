@@ -19,10 +19,16 @@ export LC_ALL='C'
 export EDITOR='vim'
 
 # -------------------------------------------------------------------
+# Google Antigravity
+# -------------------------------------------------------------------
+if [[ -d "${HOME}/.antigravity" ]]; then
+    export PATH="${HOME}/.antigravity/antigravity/bin:$PATH"
+fi
+
+# -------------------------------------------------------------------
 # Google Cloud SDK
 # -------------------------------------------------------------------
-# The next line updates PATH for the Google Cloud SDK.
-if [[ -s "/usr/local/Caskroom/google-cloud-sdk/path.zsh.inc" ]]; then
+ [[ -s "/usr/local/Caskroom/google-cloud-sdk/path.zsh.inc" ]]; then
     . "/usr/local/Caskroom/google-cloud-sdk/path.zsh.inc"
 elif [[ -s "/opt/homebrew/Caskroom/google-cloud-sdk/path.zsh.inc" ]]; then
     . "/opt/homebrew/Caskroom/google-cloud-sdk/path.zsh.inc"
@@ -73,14 +79,16 @@ if command -v jenv >/dev/null 2>&1; then eval "$(jenv init -)"; fi
 # -------------------------------------------------------------------
 # Initialize nvm
 # ----------------------------------------- --------------------------
-export NVM_DIR="$HOME/.nvm"
-
-if [[ -s "${NVM_DIR}/nvm.sh" ]]; then
-    . "${NVM_DIR}/nvm.sh"
-fi
-
-if [[ -s "$NVM_DIR/bash_completion" ]]; then
-    . "$NVM_DIR/bash_completion"
+if [[ -d "${HOME}/.nvm" ]]; then
+    export NVM_DIR="${HOME}/.nvm"
+    
+    if [[ -s "${NVM_DIR}/nvm.sh" ]]; then
+        . "${NVM_DIR}/nve.sh"
+    fi
+    
+    if [[ -s "$NVM_DIR/bash_completion" ]]; then
+        . "$NVM_DIR/bash_completion"
+    fi
 fi
 
 # -------------------------------------------------------------------
@@ -133,13 +141,18 @@ elif [[ -d /opt/homebrew/share/chruby ]]; then
 fi
 
 # -------------------------------------------------------------------
+# Initialize mise
+# -------------------------------------------------------------------
+if command -v mise >/dev/null 2>&1; then eval "$(mise activate -)"; fi
+
+# -------------------------------------------------------------------
 # SDKMAN
 # -------------------------------------------------------------------
 if [[ -d "${HOME}/.sdkman" ]]; then
     export SDKMAN_DIR="${HOME}/.sdkman"
-fi
-
-# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-if [[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]]; then
-    . "${HOME}/.sdkman/bin/sdkman-init.sh"
+    
+    # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+    if [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]]; then
+        . "${SDKMAN_DIR}/bin/sdkman-init.sh"
+    fi
 fi
