@@ -9,6 +9,8 @@ fi
      . ${HOME}/.profile
  fi
 
+zstyle ':antidote:bundle' use-friendly-names 'yes'
+
  # Source .dot files, if it exists
  if [[ -d ${HOME}/.dot ]]; then
      . ${HOME}/.dot/checks.inc
