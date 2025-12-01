@@ -73,9 +73,9 @@ export DISABLE_AUTO_TITLE="true"
 # -------------------------------------------------------------------
 # Java
 # -------------------------------------------------------------------
-if [[ $IS_MAC -eq 1 ]]; then
-    export JAVA_HOME=$(/usr/libexec/java_home)
-fi
+#if [[ $IS_MAC -eq 1 ]]; then
+#    export JAVA_HOME=$(/usr/libexec/java_home)
+#fi
 
 # -------------------------------------------------------------------
 # Initialize jenv
