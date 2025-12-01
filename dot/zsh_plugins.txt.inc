@@ -98,9 +98,9 @@ zsh-users/zsh-syntax-highlighting
 # prompts:
 #   with prompt plugins, remember to add this to your .zshrc:
 #   `autoload -Uz promptinit && promptinit && prompt pure`
-sindresorhus/pure     kind:fpath
-romkatv/powerlevel10k kind:fpath
+#sindresorhus/pure     kind:fpath
+#romkatv/powerlevel10k kind:fpath
 
-# oh-my-zsh custom theme
+# oh-my-zsh: Chaffee Theme
 jasonchaffee/chaffee.zsh-theme
  
