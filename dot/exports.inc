@@ -4,6 +4,11 @@
 path_prepend $(brew --prefix)/bin
 
 # -------------------------------------------------------------------
+# Initialize mise
+# -------------------------------------------------------------------
+if command -v mise >/dev/null 2>&1; then eval "$(mise activate ${SHELL_NAME})"; fi
+
+# -------------------------------------------------------------------
 # Antidote ZSH Plugin Manager
 # -------------------------------------------------------------------
 # Source Antidote from Brew Install
@@ -151,11 +156,6 @@ elif [[ -d /opt/homebrew/share/chruby ]]; then
     . '/opt/homebrew/share/chruby/chruby.sh'
     . '/opt/homebrew/share/chruby/auto.sh'
 fi
-
-# -------------------------------------------------------------------
-# Initialize mise
-# -------------------------------------------------------------------
-if command -v mise >/dev/null 2>&1; then eval "$(mise activate ${SHELL_NAME})"; fi
 
 # -------------------------------------------------------------------
 # SDKMAN
