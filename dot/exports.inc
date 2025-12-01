@@ -9,17 +9,6 @@ path_prepend $(brew --prefix)/bin
 if command -v mise >/dev/null 2>&1; then eval "$(mise activate ${SHELL_NAME})"; fi
 
 # -------------------------------------------------------------------
-# Antidote ZSH Plugin Manager
-# -------------------------------------------------------------------
-# Source Antidote from Brew Install
-if [[ -f "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh" ]]; then
-    . "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh"
-
-    # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
-    antidote load
-fi
-
-# -------------------------------------------------------------------
 # Use Default Language for output
 # -------------------------------------------------------------------
 export LC_ALL='C'
@@ -167,4 +156,15 @@ if [[ -d "${HOME}/.sdkman" ]]; then
     if [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]]; then
         . "${SDKMAN_DIR}/bin/sdkman-init.sh"
     fi
+fi
+
+# -------------------------------------------------------------------
+# Antidote ZSH Plugin Manager
+# -------------------------------------------------------------------
+# Source Antidote from Brew Install
+if [[ -f "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh" ]]; then
+    . "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh"
+
+    # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
+    antidote load
 fi
