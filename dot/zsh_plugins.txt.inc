@@ -21,7 +21,8 @@ getantidote/use-omz        # handle OMZ dependencies
 ohmyzsh/ohmyzsh path:lib   # load OMZ's library
 ohmyzsh/ohmyzsh path:plugins/colored-man-pages  # load OMZ plugins
 ohmyzsh/ohmyzsh path:plugins/magic-enter
-# custom theme
+
+# oh-my-zsh custom theme
 jasonchaffee/chaffee.zsh-theme
 
 # or lighter-weight ones like zsh-utils
