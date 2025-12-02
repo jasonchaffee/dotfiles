@@ -94,12 +94,11 @@ if [[ "install" == $1 ]]; then
     cp -v ${HOME}/.zsh_plugins.txt ${HOME}/.zsh_plugins.txt.dotfiles.install.bak
 
     echo "Installing dot configuration files"
-    cp -frv ${BASE_DIR}/dot ${HOME}/.dot
-    cp -v ${BASE_DIR}/bashrc.inc ${HOME}/.bashrc
-    cp -v ${BASE_DIR}/gitignore.inc ${HOME}/.gitignore
-    cp -v ${BASE_DIR}/vimrc.inc ${HOME}/.vimrc
-    cp -v ${BASE_DIR}/dot/zsh_plugins.txt.inc ${HOME}/.zsh_plugins.txt
-    cp -v ${BASE_DIR}/zshrc.inc ${HOME}/.zshrc
+    cp -v ${BASE_DIR}/bashrc ${HOME}/.bashrc
+    cp -v ${BASE_DIR}/gitignore ${HOME}/.gitignore
+    cp -v ${BASE_DIR}/vimrc ${HOME}/.vimrc
+    cp -v ${BASE_DIR}/zsh_plugins.txt ${HOME}/.zsh_plugins.txt
+    cp -v ${BASE_DIR}/zshrc ${HOME}/.zshrc
 
     git_config
 elif [[ "uninstall" == $1 ]]; then
@@ -111,7 +110,6 @@ elif [[ "uninstall" == $1 ]]; then
     cp -v ${HOME}/.zsh_plugins.txt ${HOME}/.zsh_plugins.txt.dotfiles.uninstall.bak
     
     echo "Uninstalling dot configuration files"
-    rm -fr ${HOME}/.dot
     rm -f ${HOME}/.bashrc
     rm -f ${HOME}/.gitignore
     rm -f ${HOME}/.vimrc
