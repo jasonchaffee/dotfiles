@@ -11,12 +11,15 @@ fi
 
 zstyle ':antidote:bundle' use-friendly-names 'yes'
 
- # Source .dot files, if it exists
- if [[ -d ${HOME}/.dot ]]; then
-     . ${HOME}/.dot/checks.inc
-     . ${HOME}/.dot/aliases.inc
-     . ${HOME}/.dot/functions.inc
-     . ${HOME}/.dot/exports.inc
- fi
+# -------------------------------------------------------------------
+# Antidote ZSH Plugin Manager
+# -------------------------------------------------------------------
+# Source Antidote from Brew Install
+if [[ -f "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh" ]]; then
+    . "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh"
 
-path_append ${HOME}/bin
+    # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
+    antidote load
+fi
+
+#path_append ${HOME}/bin

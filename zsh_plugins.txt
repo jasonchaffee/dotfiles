@@ -103,4 +103,10 @@ zsh-users/zsh-syntax-highlighting
 
 # oh-my-zsh: Chaffee Theme
 jasonchaffee/chaffee.zsh-theme
+
+# jasonchaffee: zsh plugins
+jasonchaffee/dotfiles path:checks
+jasonchaffee/dotfiles path:alias
+jasonchaffee/dotfiles path:functions
+jasonchaffee/dotfiles path:exports
  

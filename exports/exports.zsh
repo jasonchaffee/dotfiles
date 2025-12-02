@@ -157,14 +157,3 @@ if [[ -d "${HOME}/.sdkman" ]]; then
         . "${SDKMAN_DIR}/bin/sdkman-init.sh"
     fi
 fi
-
-# -------------------------------------------------------------------
-# Antidote ZSH Plugin Manager
-# -------------------------------------------------------------------
-# Source Antidote from Brew Install
-if [[ -f "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh" ]]; then
-    . "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh"
-
-    # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
-    antidote load
-fi
