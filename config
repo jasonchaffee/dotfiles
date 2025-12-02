@@ -87,14 +87,14 @@ git_config() {
 # Config install and uninstall script
 if [[ "install" == $1 ]]; then
     echo "Backing up .bashrc, .gitignore, .vimrc, .zshrc, and .zsh_plugins.txt"
-    cp -v ${HOME}/.bashrc ${HOME}/.bashrc.dotfiles.install.bak
-    cp -v ${HOME}/.gitignore ${HOME}/.gitignore.dotfiles.install.bak
-    cp -v ${HOME}/.vimrc ${HOME}/.vimrc.dotfiles.install.bak
-    cp -v ${HOME}/.zshrc ${HOME}/.zshrc.dotfiles.install.bak
-    cp -v ${HOME}/.zsh_plugins.txt ${HOME}/.zsh_plugins.txt.dotfiles.install.bak
+    #cp -v ${HOME}/.bashrc ${HOME}/.bashrc.dotfiles.bak
+    cp -v ${HOME}/.gitignore ${HOME}/.gitignore.dotfiles.bak
+    cp -v ${HOME}/.vimrc ${HOME}/.vimrc.dotfiles.bak
+    cp -v ${HOME}/.zshrc ${HOME}/.zshrc.dotfiles.bak
+    cp -v ${HOME}/.zsh_plugins.txt ${HOME}/.zsh_plugins.txt.dotfiles.bak
 
     echo "Installing dot configuration files"
-    cp -v ${BASE_DIR}/bashrc ${HOME}/.bashrc
+    #cp -v ${BASE_DIR}/bashrc ${HOME}/.bashrc
     cp -v ${BASE_DIR}/gitignore ${HOME}/.gitignore
     cp -v ${BASE_DIR}/vimrc ${HOME}/.vimrc
     cp -v ${BASE_DIR}/zsh_plugins.txt ${HOME}/.zsh_plugins.txt
@@ -103,14 +103,14 @@ if [[ "install" == $1 ]]; then
     git_config
 elif [[ "uninstall" == $1 ]]; then
     echo "Backing up .bashrc, .gitignore, .vimrc, .zshrc, and .zsh_plugins.txt"
-    cp -v ${HOME}/.bashrc ${HOME}/.bashrc.dotfiles.uninstall.bak
-    cp -v ${HOME}/.gitignore ${HOME}/.gitignore.dotfiles.uninstall.bak
-    cp -v ${HOME}/.vimrc ${HOME}/.vimrc.dotfiles.uninstall.bak
-    cp -v ${HOME}/.zshrc ${HOME}/.zshrc.dotfiles.uninstall.bak
-    cp -v ${HOME}/.zsh_plugins.txt ${HOME}/.zsh_plugins.txt.dotfiles.uninstall.bak
+    #cp -v ${HOME}/.bashrc ${HOME}/.bashrc.dotfiles.bak
+    cp -v ${HOME}/.gitignore ${HOME}/.gitignore.dotfiles.bak
+    cp -v ${HOME}/.vimrc ${HOME}/.vimrc.dotfiles.bak
+    cp -v ${HOME}/.zshrc ${HOME}/.zshrc.dotfiles.bak
+    cp -v ${HOME}/.zsh_plugins.txt ${HOME}/.zsh_plugins.txt.dotfiles.bak
     
     echo "Uninstalling dot configuration files"
-    rm -f ${HOME}/.bashrc
+    #rm -f ${HOME}/.bashrc
     rm -f ${HOME}/.gitignore
     rm -f ${HOME}/.vimrc
     rm -f ${HOME}/.zshrc
