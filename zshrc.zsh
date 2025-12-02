@@ -9,8 +9,6 @@ fi
      . ${HOME}/.profile
  fi
 
-zstyle ':antidote:bundle' use-friendly-names 'yes'
-
 # -------------------------------------------------------------------
 # Antidote ZSH Plugin Manager
 # -------------------------------------------------------------------
@@ -18,8 +16,9 @@ zstyle ':antidote:bundle' use-friendly-names 'yes'
 if [[ -f "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh" ]]; then
     . "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh"
 
+    # use friendly names
+    zstyle ':antidote:bundle' use-friendly-names 'yes'
+
     # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
     antidote load
 fi
-
-#path_append ${HOME}/bin
