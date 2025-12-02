@@ -18,12 +18,12 @@
 #                   - *.sh
 #                   - *.zsh-theme   
 #           path:
-#               - Put the plugin folder in your $PATH 
+#               - Add the plugin folder to $PATH 
 #           fpath:
 #               - Only puts the plugin folder on the fpath, doing nothing else. 
 #                 It can be especially useful for completion scripts that aren’t intended to be sourced directly, 
 #                 or for prompts that support 'promptinit'.
-#           clone:
+#           clone: 
 #               - Only gets the plugin, doing nothing else. It can be useful for managing a package that isn’t directly used as a shell plugin. 
 #           defer:
 #               - Defers loading of a plugin. This can be useful for plugins that don't need to be  available right away or are slow to load. 
