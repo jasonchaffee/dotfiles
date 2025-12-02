@@ -119,14 +119,14 @@ export SBT_OPTS="-Xms512M -Xmx2G"
 # -------------------------------------------------------------------
 # SPRING BOOT
 # -------------------------------------------------------------------
-export SPRING_OUTPUT_ANSI_ENABLED=ALWAYS
+#export SPRING_OUTPUT_ANSI_ENABLED=ALWAYS
 
 # -------------------------------------------------------------------
 # LOGBACK
 # -------------------------------------------------------------------
-if [[ -s "${HOME}/Dev/logback.xml" ]]; then
-    export LOGGING_CONFIG="${HOME}/Dev/logback.xml"
-fi
+#if [[ -s "${HOME}/Dev/logback.xml" ]]; then
+#    export LOGGING_CONFIG="${HOME}/Dev/logback.xml"
+#fi
 
 # -------------------------------------------------------------------
 # Initialize pyenv
