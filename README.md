@@ -1,2 +1,2 @@
-# Dotfiles
-Dotfiles
+# zsh
+zsh plugins and themes.
