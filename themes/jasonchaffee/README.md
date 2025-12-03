@@ -1,4 +1,6 @@
 # jasonchaffee.zsh-theme
+
+# Introduction
 The jasonchaffee.zsh-theme based on sorin.zsh-theme.
 
 It will list the current version of the following programing languages in the shell.
