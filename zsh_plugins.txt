@@ -108,6 +108,16 @@ zsh-users/zsh-syntax-highlighting
 jasonchaffee/chaffee.zsh-theme
 
 # jasonchaffee: zsh plugins
+jasonchaffee/dotfiles path:antigravity
+jasonchaffee/dotfiles path:brew
+jasonchaffee/dotfiles path:editor
+jasonchaffee/dotfiles path:git
+jasonchaffee/dotfiles path:gradle
+jasonchaffee/dotfiles path:grep
+jasonchaffee/dotfiles path:maven
+jasonchaffee/dotfiles path:mise
+jasonchaffee/dotfiles path:terminal
+
 jasonchaffee/dotfiles path:checks
 jasonchaffee/dotfiles path:alias
 jasonchaffee/dotfiles path:functions
