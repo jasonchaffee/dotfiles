@@ -104,9 +104,6 @@ zsh-users/zsh-syntax-highlighting
 #sindresorhus/pure     kind:fpath
 #romkatv/powerlevel10k kind:fpath
 
-# oh-my-zsh: Chaffee Theme
-jasonchaffee/chaffee.zsh-theme
-
 # jasonchaffee: zsh plugins
 jasonchaffee/dotfiles path:antigravity
 jasonchaffee/dotfiles path:brew
@@ -122,6 +119,9 @@ jasonchaffee/dotfiles path:mise
 jasonchaffee/dotfiles path:path
 jasonchaffee/dotfiles path:ps
 jasonchaffee/dotfiles path:terminal
+
+# oh-my-zsh: Chaffee Theme
+jasonchaffee/chaffee.zsh-theme
 
 #jasonchaffee/dotfiles path:checks
 #jasonchaffee/dotfiles path:alias
