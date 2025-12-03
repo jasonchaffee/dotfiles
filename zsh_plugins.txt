@@ -57,6 +57,9 @@ ohmyzsh/ohmyzsh path:plugins/command-not-found
 ohmyzsh/ohmyzsh path:plugins/dotenv
 ohmyzsh/ohmyzsh path:plugins/history
 
+# oh-my-zsh: iterm2
+ohmyzsh/ohmyzsh path:plugins/iterm2
+
 # oh-my-zsh: Source Control
 ohmyzsh/ohmyzsh path:plugins/git
 ohmyzsh/ohmyzsh path:plugins/svn
