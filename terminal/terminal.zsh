@@ -37,7 +37,7 @@ precmd() {
 #     tab [PATH] [CMD] ...  You can prob'ly guess
 # -------------------------------------------------------------------
 function tab () {
-    if [[ $(uname) ne 'Darwin'  ]]; then
+    if [[ $(uname) != 'Darwin'  ]]; then
         return
     fi
 
